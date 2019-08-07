@@ -3,17 +3,32 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		044E9FAE47E09879F8F996C6 /* Pods_CheqDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33A3CE4B21EA317051137B7 /* Pods_CheqDemoTests.framework */; };
+		3F91E9A359B3A8B546EF755A /* Pods_CheqDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CA3D1B346D4F3ECE2827EC /* Pods_CheqDemo.framework */; };
 		9676521422FAFD01001E43E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676521322FAFD01001E43E0 /* AppDelegate.swift */; };
-		9676521622FAFD01001E43E0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676521522FAFD01001E43E0 /* FirstViewController.swift */; };
-		9676521822FAFD01001E43E0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676521722FAFD01001E43E0 /* SecondViewController.swift */; };
 		9676521B22FAFD01001E43E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9676521922FAFD01001E43E0 /* Main.storyboard */; };
 		9676521D22FAFD03001E43E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9676521C22FAFD03001E43E0 /* Assets.xcassets */; };
 		9676522022FAFD03001E43E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9676521E22FAFD03001E43E0 /* LaunchScreen.storyboard */; };
 		9676522B22FAFD04001E43E0 /* CheqDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676522A22FAFD04001E43E0 /* CheqDemoTests.swift */; };
+		9676523E22FB05C1001E43E0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676523D22FB05C1001E43E0 /* ProfileViewController.swift */; };
+		9676524022FB05D1001E43E0 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676523F22FB05D1001E43E0 /* AnalyticsViewController.swift */; };
+		9676524222FB060E001E43E0 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524122FB060E001E43E0 /* FinanceViewController.swift */; };
+		9676524522FB064C001E43E0 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524422FB064C001E43E0 /* ViewModelProtocol.swift */; };
+		9676524722FB0691001E43E0 /* CardViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524622FB0691001E43E0 /* CardViewProtocol.swift */; };
+		9676524B22FB06DB001E43E0 /* AppThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524A22FB06DB001E43E0 /* AppThemeProtocol.swift */; };
+		9676524E22FB071E001E43E0 /* PieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524D22FB071E001E43E0 /* PieCardView.swift */; };
+		9676525022FB0754001E43E0 /* BarCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524F22FB0754001E43E0 /* BarCardView.swift */; };
+		9676525222FB07A1001E43E0 /* FinanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525122FB07A1001E43E0 /* FinanceViewModel.swift */; };
+		9676525422FB07C0001E43E0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525322FB07C0001E43E0 /* ProfileViewModel.swift */; };
+		9676525622FB07E5001E43E0 /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525522FB07E4001E43E0 /* AnalyticsViewModel.swift */; };
+		9676525922FB082F001E43E0 /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525822FB082F001E43E0 /* AnalyticsService.swift */; };
+		9676525B22FB083D001E43E0 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525A22FB083D001E43E0 /* ProfileService.swift */; };
+		9676525D22FB0856001E43E0 /* FinanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525C22FB0856001E43E0 /* FinanceService.swift */; };
+		9676526022FB0946001E43E0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525F22FB0946001E43E0 /* TabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +42,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		38CA3D1B346D4F3ECE2827EC /* Pods_CheqDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheqDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		44FC537C7FA5F20A118E5EE3 /* Pods-CheqDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemo.release.xcconfig"; path = "Target Support Files/Pods-CheqDemo/Pods-CheqDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6BC1742E601FD3D7F376A4B3 /* Pods-CheqDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-CheqDemoTests/Pods-CheqDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		79BDF7ED3FA15B62DEDE5A0E /* Pods-CheqDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemo.debug.xcconfig"; path = "Target Support Files/Pods-CheqDemo/Pods-CheqDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9676521022FAFD01001E43E0 /* CheqDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheqDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9676521322FAFD01001E43E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9676521522FAFD01001E43E0 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		9676521722FAFD01001E43E0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9676521A22FAFD01001E43E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9676521C22FAFD03001E43E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9676521F22FAFD03001E43E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +55,23 @@
 		9676522622FAFD04001E43E0 /* CheqDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheqDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9676522A22FAFD04001E43E0 /* CheqDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheqDemoTests.swift; sourceTree = "<group>"; };
 		9676522C22FAFD04001E43E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9676523D22FB05C1001E43E0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9676523F22FB05D1001E43E0 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
+		9676524122FB060E001E43E0 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
+		9676524422FB064C001E43E0 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		9676524622FB0691001E43E0 /* CardViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewProtocol.swift; sourceTree = "<group>"; };
+		9676524A22FB06DB001E43E0 /* AppThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeProtocol.swift; sourceTree = "<group>"; };
+		9676524D22FB071E001E43E0 /* PieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieCardView.swift; sourceTree = "<group>"; };
+		9676524F22FB0754001E43E0 /* BarCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCardView.swift; sourceTree = "<group>"; };
+		9676525122FB07A1001E43E0 /* FinanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewModel.swift; sourceTree = "<group>"; };
+		9676525322FB07C0001E43E0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		9676525522FB07E4001E43E0 /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
+		9676525822FB082F001E43E0 /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		9676525A22FB083D001E43E0 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		9676525C22FB0856001E43E0 /* FinanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceService.swift; sourceTree = "<group>"; };
+		9676525F22FB0946001E43E0 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		C33A3CE4B21EA317051137B7 /* Pods_CheqDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheqDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C798FA601387B795C7DCC2CB /* Pods-CheqDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemoTests.release.xcconfig"; path = "Target Support Files/Pods-CheqDemoTests/Pods-CheqDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F91E9A359B3A8B546EF755A /* Pods_CheqDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +87,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044E9FAE47E09879F8F996C6 /* Pods_CheqDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CD776E6BCD57CA70EFE0360 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79BDF7ED3FA15B62DEDE5A0E /* Pods-CheqDemo.debug.xcconfig */,
+				44FC537C7FA5F20A118E5EE3 /* Pods-CheqDemo.release.xcconfig */,
+				6BC1742E601FD3D7F376A4B3 /* Pods-CheqDemoTests.debug.xcconfig */,
+				C798FA601387B795C7DCC2CB /* Pods-CheqDemoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		60F74BD8DC9F25DD4CC2B10B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38CA3D1B346D4F3ECE2827EC /* Pods_CheqDemo.framework */,
+				C33A3CE4B21EA317051137B7 /* Pods_CheqDemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9676520722FAFD01001E43E0 = {
 			isa = PBXGroup;
 			children = (
 				9676521222FAFD01001E43E0 /* CheqDemo */,
 				9676522922FAFD04001E43E0 /* CheqDemoTests */,
 				9676521122FAFD01001E43E0 /* Products */,
+				2CD776E6BCD57CA70EFE0360 /* Pods */,
+				60F74BD8DC9F25DD4CC2B10B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +137,17 @@
 		9676521222FAFD01001E43E0 /* CheqDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9676525722FB080F001E43E0 /* Service */,
+				9676524322FB061B001E43E0 /* Common */,
+				9676523722FB0136001E43E0 /* Features */,
+				9676523622FB0130001E43E0 /* Views */,
+				9676523522FB0128001E43E0 /* Themes */,
 				9676521322FAFD01001E43E0 /* AppDelegate.swift */,
-				9676521522FAFD01001E43E0 /* FirstViewController.swift */,
-				9676521722FAFD01001E43E0 /* SecondViewController.swift */,
 				9676521922FAFD01001E43E0 /* Main.storyboard */,
 				9676521C22FAFD03001E43E0 /* Assets.xcassets */,
 				9676521E22FAFD03001E43E0 /* LaunchScreen.storyboard */,
 				9676522122FAFD03001E43E0 /* Info.plist */,
+				9676525F22FB0946001E43E0 /* TabViewController.swift */,
 			);
 			path = CheqDemo;
 			sourceTree = "<group>";
@@ -99,6 +161,103 @@
 			path = CheqDemoTests;
 			sourceTree = "<group>";
 		};
+		9676523522FB0128001E43E0 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		9676523622FB0130001E43E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9676524D22FB071E001E43E0 /* PieCardView.swift */,
+				9676524F22FB0754001E43E0 /* BarCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9676523722FB0136001E43E0 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				9676523A22FB0171001E43E0 /* Analytics */,
+				9676523922FB0166001E43E0 /* Finance */,
+				9676523822FB015D001E43E0 /* Profile */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		9676523822FB015D001E43E0 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9676523D22FB05C1001E43E0 /* ProfileViewController.swift */,
+				9676525322FB07C0001E43E0 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9676523922FB0166001E43E0 /* Finance */ = {
+			isa = PBXGroup;
+			children = (
+				9676524122FB060E001E43E0 /* FinanceViewController.swift */,
+				9676525122FB07A1001E43E0 /* FinanceViewModel.swift */,
+			);
+			path = Finance;
+			sourceTree = "<group>";
+		};
+		9676523A22FB0171001E43E0 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				9676523F22FB05D1001E43E0 /* AnalyticsViewController.swift */,
+				9676525522FB07E4001E43E0 /* AnalyticsViewModel.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		9676524322FB061B001E43E0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9676525E22FB086B001E43E0 /* Extensions */,
+				9676524922FB06C0001E43E0 /* Theme */,
+				9676524822FB06B6001E43E0 /* Protocol */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9676524822FB06B6001E43E0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9676524422FB064C001E43E0 /* ViewModelProtocol.swift */,
+				9676524622FB0691001E43E0 /* CardViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		9676524922FB06C0001E43E0 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				9676524A22FB06DB001E43E0 /* AppThemeProtocol.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		9676525722FB080F001E43E0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9676525822FB082F001E43E0 /* AnalyticsService.swift */,
+				9676525A22FB083D001E43E0 /* ProfileService.swift */,
+				9676525C22FB0856001E43E0 /* FinanceService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9676525E22FB086B001E43E0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9676522F22FAFD04001E43E0 /* Build configuration list for PBXNativeTarget "CheqDemo" */;
 			buildPhases = (
+				E2861FED995F3DF7850125EE /* [CP] Check Pods Manifest.lock */,
 				9676520C22FAFD01001E43E0 /* Sources */,
 				9676520D22FAFD01001E43E0 /* Frameworks */,
 				9676520E22FAFD01001E43E0 /* Resources */,
+				3142DB9627DFB2FC9A0DDA79 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,9 +284,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9676523222FAFD04001E43E0 /* Build configuration list for PBXNativeTarget "CheqDemoTests" */;
 			buildPhases = (
+				B593042B4D90B52AE5059D16 /* [CP] Check Pods Manifest.lock */,
 				9676522222FAFD04001E43E0 /* Sources */,
 				9676522322FAFD04001E43E0 /* Frameworks */,
 				9676522422FAFD04001E43E0 /* Resources */,
+				4BEC3555FFAF3848F40544EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,14 +358,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3142DB9627DFB2FC9A0DDA79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheqDemo/Pods-CheqDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheqDemo/Pods-CheqDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheqDemo/Pods-CheqDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BEC3555FFAF3848F40544EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheqDemoTests/Pods-CheqDemoTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CheqDemoTests/Pods-CheqDemoTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CheqDemoTests/Pods-CheqDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B593042B4D90B52AE5059D16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CheqDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2861FED995F3DF7850125EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CheqDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9676520C22FAFD01001E43E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9676521822FAFD01001E43E0 /* SecondViewController.swift in Sources */,
+				9676525D22FB0856001E43E0 /* FinanceService.swift in Sources */,
+				9676524722FB0691001E43E0 /* CardViewProtocol.swift in Sources */,
+				9676525B22FB083D001E43E0 /* ProfileService.swift in Sources */,
+				9676524222FB060E001E43E0 /* FinanceViewController.swift in Sources */,
+				9676525622FB07E5001E43E0 /* AnalyticsViewModel.swift in Sources */,
+				9676526022FB0946001E43E0 /* TabViewController.swift in Sources */,
 				9676521422FAFD01001E43E0 /* AppDelegate.swift in Sources */,
-				9676521622FAFD01001E43E0 /* FirstViewController.swift in Sources */,
+				9676524022FB05D1001E43E0 /* AnalyticsViewController.swift in Sources */,
+				9676525222FB07A1001E43E0 /* FinanceViewModel.swift in Sources */,
+				9676524B22FB06DB001E43E0 /* AppThemeProtocol.swift in Sources */,
+				9676524522FB064C001E43E0 /* ViewModelProtocol.swift in Sources */,
+				9676524E22FB071E001E43E0 /* PieCardView.swift in Sources */,
+				9676525022FB0754001E43E0 /* BarCardView.swift in Sources */,
+				9676525922FB082F001E43E0 /* AnalyticsService.swift in Sources */,
+				9676525422FB07C0001E43E0 /* ProfileViewModel.swift in Sources */,
+				9676523E22FB05C1001E43E0 /* ProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,13 +552,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -350,18 +608,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		9676523022FAFD04001E43E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79BDF7ED3FA15B62DEDE5A0E /* Pods-CheqDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -374,12 +634,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wisetreeapps.CheqDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		9676523122FAFD04001E43E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44FC537C7FA5F20A118E5EE3 /* Pods-CheqDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,12 +653,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wisetreeapps.CheqDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		9676523322FAFD04001E43E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BC1742E601FD3D7F376A4B3 /* Pods-CheqDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -419,6 +681,7 @@
 		};
 		9676523422FAFD04001E43E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C798FA601387B795C7DCC2CB /* Pods-CheqDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
