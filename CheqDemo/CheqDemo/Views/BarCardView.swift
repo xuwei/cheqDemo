@@ -8,6 +8,6 @@
 
 import UIKit
 
-class BarCardView: CardViewProtocol {
+class BarCardView: UICollectionView, CardViewProtocol {
 
 }

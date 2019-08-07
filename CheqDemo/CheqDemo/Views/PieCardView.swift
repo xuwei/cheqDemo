@@ -9,5 +9,7 @@
 import UIKit
 
 struct PieCardView: CardViewProtocol {
+    init() {
 
+    }
 }

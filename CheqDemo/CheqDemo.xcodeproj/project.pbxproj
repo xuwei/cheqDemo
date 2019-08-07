@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		044E9FAE47E09879F8F996C6 /* Pods_CheqDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33A3CE4B21EA317051137B7 /* Pods_CheqDemoTests.framework */; };
 		3F91E9A359B3A8B546EF755A /* Pods_CheqDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CA3D1B346D4F3ECE2827EC /* Pods_CheqDemo.framework */; };
+		963D62EE22FB1DE0006344C9 /* CollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */; };
 		9676521422FAFD01001E43E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676521322FAFD01001E43E0 /* AppDelegate.swift */; };
 		9676521B22FAFD01001E43E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9676521922FAFD01001E43E0 /* Main.storyboard */; };
 		9676521D22FAFD03001E43E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9676521C22FAFD03001E43E0 /* Assets.xcassets */; };
@@ -29,6 +30,8 @@
 		9676525B22FB083D001E43E0 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525A22FB083D001E43E0 /* ProfileService.swift */; };
 		9676525D22FB0856001E43E0 /* FinanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525C22FB0856001E43E0 /* FinanceService.swift */; };
 		9676526022FB0946001E43E0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525F22FB0946001E43E0 /* TabViewController.swift */; };
+		9676526222FB156E001E43E0 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676526122FB156E001E43E0 /* CarouselCollectionViewCell.swift */; };
+		9676526422FB158B001E43E0 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676526322FB158B001E43E0 /* GridCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,7 @@
 		44FC537C7FA5F20A118E5EE3 /* Pods-CheqDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemo.release.xcconfig"; path = "Target Support Files/Pods-CheqDemo/Pods-CheqDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6BC1742E601FD3D7F376A4B3 /* Pods-CheqDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-CheqDemoTests/Pods-CheqDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		79BDF7ED3FA15B62DEDE5A0E /* Pods-CheqDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemo.debug.xcconfig"; path = "Target Support Files/Pods-CheqDemo/Pods-CheqDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewProtocol.swift; sourceTree = "<group>"; };
 		9676521022FAFD01001E43E0 /* CheqDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheqDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9676521322FAFD01001E43E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9676521A22FAFD01001E43E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		9676525A22FB083D001E43E0 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		9676525C22FB0856001E43E0 /* FinanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceService.swift; sourceTree = "<group>"; };
 		9676525F22FB0946001E43E0 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		9676526122FB156E001E43E0 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
+		9676526322FB158B001E43E0 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		C33A3CE4B21EA317051137B7 /* Pods_CheqDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheqDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C798FA601387B795C7DCC2CB /* Pods-CheqDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemoTests.release.xcconfig"; path = "Target Support Files/Pods-CheqDemoTests/Pods-CheqDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +179,8 @@
 			children = (
 				9676524D22FB071E001E43E0 /* PieCardView.swift */,
 				9676524F22FB0754001E43E0 /* BarCardView.swift */,
+				9676526122FB156E001E43E0 /* CarouselCollectionViewCell.swift */,
+				9676526322FB158B001E43E0 /* GridCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 			children = (
 				9676524422FB064C001E43E0 /* ViewModelProtocol.swift */,
 				9676524622FB0691001E43E0 /* CardViewProtocol.swift */,
+				963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -447,6 +456,8 @@
 				9676525D22FB0856001E43E0 /* FinanceService.swift in Sources */,
 				9676524722FB0691001E43E0 /* CardViewProtocol.swift in Sources */,
 				9676525B22FB083D001E43E0 /* ProfileService.swift in Sources */,
+				9676526222FB156E001E43E0 /* CarouselCollectionViewCell.swift in Sources */,
+				963D62EE22FB1DE0006344C9 /* CollectionViewProtocol.swift in Sources */,
 				9676524222FB060E001E43E0 /* FinanceViewController.swift in Sources */,
 				9676525622FB07E5001E43E0 /* AnalyticsViewModel.swift in Sources */,
 				9676526022FB0946001E43E0 /* TabViewController.swift in Sources */,
@@ -455,6 +466,7 @@
 				9676525222FB07A1001E43E0 /* FinanceViewModel.swift in Sources */,
 				9676524B22FB06DB001E43E0 /* AppThemeProtocol.swift in Sources */,
 				9676524522FB064C001E43E0 /* ViewModelProtocol.swift in Sources */,
+				9676526422FB158B001E43E0 /* GridCollectionViewCell.swift in Sources */,
 				9676524E22FB071E001E43E0 /* PieCardView.swift in Sources */,
 				9676525022FB0754001E43E0 /* BarCardView.swift in Sources */,
 				9676525922FB082F001E43E0 /* AnalyticsService.swift in Sources */,
