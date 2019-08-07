@@ -61,10 +61,6 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="UCm-Og-0sq" id="5Yx-hi-dGd"/>
-                                    <outlet property="delegate" destination="UCm-Og-0sq" id="5Jx-f1-wiu"/>
-                                </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="GridCollectionView" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hUl-G7-30h" userLabel="GridCollectionView">
                                 <rect key="frame" x="0.0" y="378" width="414" height="435"/>
@@ -85,10 +81,6 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="UCm-Og-0sq" id="SP9-oY-M55"/>
-                                    <outlet property="delegate" destination="UCm-Og-0sq" id="72D-ok-j0i"/>
-                                </connections>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="KH5-zH-0Rv">
                                 <rect key="frame" x="0.0" y="341" width="414" height="37"/>

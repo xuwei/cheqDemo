@@ -13,32 +13,15 @@ class FinanceViewController: UIViewController {
     @IBOutlet var gridCollectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
 
+    let carouselCoordintor = CarouselCollectionViewCoordinator()
+    let gridCoordinator = GridCollectionViewCoordinator()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .blue 
-    }
-}
-
-extension FinanceViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let restoreIdentifier = collectionView.restorationIdentifier ?? ""
-        if (restoreIdentifier == "CarouselCollectionView") {
-            return 3
-        } else {
-            return 10
-        }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let restoreIdentifier = collectionView.restorationIdentifier ?? ""
-        if (restoreIdentifier == "CarouselCollectionView") {
-            let identifier = String(describing: CarouselCollectionViewCell.self)
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-            return cell
-        } else {
-            let identifier = String(describing: GridCollectionViewCell.self)
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-            return cell
-        }
+        self.view.backgroundColor = .blue
+        carouselCollectionView.delegate = carouselCoordintor
+        carouselCollectionView.dataSource = carouselCoordintor
+        gridCollectionView.delegate = gridCoordinator
+        gridCollectionView.dataSource = gridCoordinator
     }
 }
