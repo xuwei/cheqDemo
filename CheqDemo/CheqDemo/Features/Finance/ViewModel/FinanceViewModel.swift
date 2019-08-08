@@ -7,7 +7,16 @@
 //
 
 import UIKit
+import RxSwift
 
 struct FinanceViewModel: ViewModelProtocol {
+
+    let barChartModels = PublishSubject<[BarChartModel]>()
+    let pieChartModels = PublishSubject<[PieChartModel]>()
+
+    func load() {
+        
+    }
+
 
 }

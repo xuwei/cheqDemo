@@ -8,6 +8,10 @@
 
 import UIKit
 
-class AppThemeProtocol {
-
+protocol AppThemeProtocol {
+    var defaultFont: UIFont { get }
+    var headerFont: UIFont { get }
+    var primaryColor: UIColor { get }
+    var backgroundColor: UIColor { get }
+    var alternativeColor: UIColor { get }
 }

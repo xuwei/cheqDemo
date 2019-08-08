@@ -8,7 +8,12 @@
 
 import UIKit
 
+
+
 class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    var delegate: CollectionViewCoordinatorDelegate?
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -19,5 +24,7 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
         return cell
     }
     
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if delegate != nil { delegate?.selectedCell(indexPath, collectionView: collectionView) }
+    }
 }

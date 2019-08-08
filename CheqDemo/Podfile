@@ -8,7 +8,6 @@ target 'CheqDemo' do
   # Pods for CheqDemo
   pod 'RxSwift', '~> 5'
   pod 'RxCocoa', '~> 5'
-  pod 'Material'
   pod 'Alamofire' 
 
   target 'CheqDemoTests' do

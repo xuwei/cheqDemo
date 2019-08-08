@@ -1,5 +1,5 @@
 //
-//  ProfileViewModel.swift
+//  AnalyticsViewModel.swift
 //  CheqDemo
 //
 //  Created by XUWEI LIANG on 7/8/19.
@@ -8,6 +8,7 @@
 
 import UIKit
 
-struct ProfileViewModel: ViewModelProtocol {
-
+struct AnalyticsViewModel: ViewModelProtocol {
+    func load() {
+    }
 }
