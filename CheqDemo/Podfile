@@ -9,6 +9,7 @@ target 'CheqDemo' do
   pod 'Charts', '~> 3.3'
   pod 'NavigationDropdownMenu'
   pod 'PromiseKit', '~> 6.8'
+  pod 'Hex'
 
   target 'CheqDemoTests' do
     inherit! :search_paths

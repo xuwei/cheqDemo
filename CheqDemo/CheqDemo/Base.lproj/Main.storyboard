@@ -44,7 +44,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CarouselCollectionView" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zsq-Fy-do7" userLabel="CarouselCollectionView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="290"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="WZf-XL-GD5">
                                     <size key="itemSize" width="300" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -58,13 +58,29 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Txh-gd-K3n">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Txh-gd-K3n" firstAttribute="leading" secondItem="gUr-Vk-Rt7" secondAttribute="leading" id="1Gt-Gd-iRj"/>
+                                            <constraint firstAttribute="trailing" secondItem="Txh-gd-K3n" secondAttribute="trailing" id="ERN-EN-phv"/>
+                                            <constraint firstAttribute="bottom" secondItem="Txh-gd-K3n" secondAttribute="bottom" id="LmA-7V-lrd"/>
+                                            <constraint firstItem="Txh-gd-K3n" firstAttribute="top" secondItem="gUr-Vk-Rt7" secondAttribute="top" id="TI6-RN-Ge4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="bg" destination="Txh-gd-K3n" id="lMc-B0-Thz"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="GridCollectionView" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hUl-G7-30h" userLabel="GridCollectionView">
                                 <rect key="frame" x="0.0" y="378" width="414" height="435"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gce-LN-sOx">
                                     <size key="itemSize" width="181" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -79,6 +95,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="181" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </view>
+                                        <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

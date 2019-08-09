@@ -9,22 +9,25 @@
 import UIKit
 import Charts
 
+protocol CarouselCollectionViewCoordinatorDelegate {
+    func updatePaginControl(_ index: Int)
+}
+
 class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
 
     let theme = PrimaryTheme()
     var controllerView: UIView?
     var collectionView: UICollectionView?
-    var pageControl: UIPageControl?
     var delegate: ChartCollectionViewCoordinatorDelegate?
+    var carouselDelegate: CarouselCollectionViewCoordinatorDelegate?
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 4
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = String(describing: CarouselCollectionViewCell.self)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-        theme.cardStyling(cell)
         return cell
     }
 
@@ -32,7 +35,7 @@ class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIC
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         let chartCell = cell as! ChartCollectionViewCellProtocol
-//        chartCell.animate()
+        chartCell.animate()
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -40,44 +43,35 @@ class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIC
     }
 }
 
-extension CarouselCollectionViewCoordinator: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        var size = CGSize(width: 0, height: 0)
-//        switch (collectionView.traitCollection.horizontalSizeClass) {
-//        case .compact:
-//            size = CarouselCollectionViewCell.compactSize
-//        case .regular:
-//            size = CarouselCollectionViewCell.regularSize
-//        case .unspecified:
-//            size = CarouselCollectionViewCell.anySize
-//        @unknown default:
-//            // detect unhandle trait class before getting out to production
-//            fatalError("support new enum type")
-//        }
-//        return size
-//    }
-}
-
 extension CarouselCollectionViewCoordinator: UIScrollViewDelegate {
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         updatePaging()
+        snapToCell()
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         updatePaging()
+        snapToCell()
     }
 
     func updatePaging() {
-        guard let collectionView = collectionView, let view = controllerView else { return }
+        guard let indexPath = closestCellToCenter() else { return }
+        self.carouselDelegate?.updatePaginControl(indexPath.row)
+    }
+
+    func snapToCell() {
+        guard let collectionView = collectionView, let indexPath = closestCellToCenter() else { return }
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+
+    func closestCellToCenter()->IndexPath? {
+        guard let collectionView = collectionView, let view = controllerView else { return nil }
         let center = collectionView.center
         // center cell
-        let indexPath = collectionView.indexPathForItem(at: view.convert(center, to: collectionView))
-        guard let idxPath = indexPath else { return }
-        collectionView.scrollToItem(at: idxPath, at: .centeredHorizontally, animated: true)
-        self.pageControl?.currentPage = idxPath.row
+        let indexPath = collectionView.indexPathForItem(at: view.convert(center, to: collectionView)) ?? nil
+        return indexPath
     }
 }
+
 

@@ -41,7 +41,6 @@ class FinanceViewModel: BaseViewModel {
         self.barChartModels.append(ChartModelUtil.fakeChartModel())
         self.barChartModels.append(ChartModelUtil.fakeChartModel())
         self.barChartModels.append(ChartModelUtil.fakeChartModel())
-        self.barChartModels.append(ChartModelUtil.fakeChartModel())
         complete()
     }
 }

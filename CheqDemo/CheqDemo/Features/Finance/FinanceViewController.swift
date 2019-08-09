@@ -27,8 +27,8 @@ class FinanceViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = viewModel.title
         self.view.backgroundColor = theme.backgroundColor
+        self.title = viewModel.title
         self.menuTitles = self.buildMenuTitles()
         setupCollectionView()
         setupDropdown()
@@ -36,6 +36,10 @@ class FinanceViewController: UIViewController {
             self.pageControl.isUserInteractionEnabled = false
             self.pageControl.numberOfPages = viewModel.barChartModels.count
         }
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     func buildMenuTitles()->[String] {
@@ -47,9 +51,9 @@ class FinanceViewController: UIViewController {
     }
 
     func setupCollectionView() {
+        self.carouselCoordintor.carouselDelegate = self
         self.carouselCoordintor.controllerView = self.view
         self.carouselCoordintor.collectionView = self.carouselCollectionView
-        self.carouselCoordintor.pageControl = self.pageControl
         self.carouselCollectionView.delegate = self.carouselCoordintor
         self.carouselCollectionView.dataSource = self.carouselCoordintor
         self.gridCoordinator.collectionView = self.gridCollectionView
@@ -86,12 +90,14 @@ class FinanceViewController: UIViewController {
     }
 }
 
+extension FinanceViewController: CarouselCollectionViewCoordinatorDelegate {
+    func updatePaginControl(_ index: Int) {
+        self.pageControl.currentPage = index
+    }
+}
+
 extension FinanceViewController: ChartCollectionViewCoordinatorDelegate {
     func selectedCell(_ indexPath: IndexPath, collectionView: UICollectionView) {
-        // update pageControl
-        if type(of: collectionView) == CarouselCollectionViewCell.self {
-            self.pageControl.currentPage = indexPath.row
-        }
     }
 }
 

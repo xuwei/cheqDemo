@@ -12,11 +12,13 @@ import Charts
 class GridCollectionViewCell: UICollectionViewCell {
 
     var pie: PieChartView = PieChartView()
+    let theme = PrimaryTheme()
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.bounds = self.frame
+        theme.cardStyling(self, bgColor: theme.textBackgroundColor)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -25,7 +27,10 @@ class GridCollectionViewCell: UICollectionViewCell {
         self.setup { view in
             self.pie = view as! PieChartView
             self.pie.rotationWithTwoFingers = false
-            self.pie.rotationEnabled = false 
+            self.pie.rotationEnabled = false
+            self.pie.entryLabelFont = theme.defaultFont
+            self.pie.entryLabelColor = theme.textColor
+            self.pie.drawHoleEnabled = true
             self.contentView.addSubview(pie)
             AutoLayout.pinToSuperview(pie)
             pie.data = loadData()
@@ -35,9 +40,15 @@ class GridCollectionViewCell: UICollectionViewCell {
     func loadData()-> PieChartData {
 
         var entries: [PieChartDataEntry] = Array()
-        entries.append(PieChartDataEntry(value: 21.0, label: "x"))
+
+        entries.append(PieChartDataEntry(value: 0.21, label: "$644"))
+        entries.append(PieChartDataEntry(value: 0.79, label: ""))
+
         let dataSet = PieChartDataSet(entries: entries, label: "Household")
+        dataSet.drawIconsEnabled = false
+        dataSet.automaticallyDisableSliceSpacing = true
         let data = PieChartData(dataSet: dataSet)
+        dataSet.valueColors = [theme.alternativeColor1, theme.alternativeOrangeColor, theme.alternativeColor4]
         return data
     }
 }

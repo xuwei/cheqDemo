@@ -15,12 +15,20 @@ protocol AppThemeProtocol {
     var headerFont: UIFont { get }
     var primaryColor: UIColor { get }
     var backgroundColor: UIColor { get }
-    var alternativeColor: UIColor { get }
+    var textBackgroundColor: UIColor { get }
+    var alternativeColor1: UIColor { get }
+    var alternativeColor2: UIColor { get }
+    var alternativeColor3: UIColor { get }
+    var alternativeColor4: UIColor { get }
+    var gradientBlueSet: [UIColor] { get }
+    var gradientOrangeSet: [UIColor] { get }
+    var gradientGreenSet: [UIColor] { get }
 
     var longAnimationDuration: TimeInterval { get }
     var mediumAnimationDuration: TimeInterval { get }
     var quickAnimationDuration: TimeInterval { get }
-    
-    func cardStyling(_ view: UIView)
+    func allBgColors()-> [UIColor]
+    func cardStyling(_ view: UIView, bgColors: [UIColor])
+    func cardStyling(_ view: UIView, bgColor: UIColor)
     func collectionViewPadding(_ collectionView: UICollectionView, cellLength: CGFloat, direction: ScrollDirection)
 }

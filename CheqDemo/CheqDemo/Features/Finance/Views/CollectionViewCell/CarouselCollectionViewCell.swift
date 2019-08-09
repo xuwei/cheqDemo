@@ -11,12 +11,15 @@ import Charts
 
 class CarouselCollectionViewCell: UICollectionViewCell {
 
+    let theme = PrimaryTheme()
     var barView: BarChartView = BarChartView()
+    @IBOutlet var bg: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.bounds = self.frame
+        theme.cardStyling(self, bgColors: GradientView.randGradientSet())
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -34,13 +37,15 @@ class CarouselCollectionViewCell: UICollectionViewCell {
     }
 
     func loadData()-> BarChartData {
-
         var entries: [ChartDataEntry] = Array()
         entries.append(BarChartDataEntry(x: 0, y: 467))
         entries.append(BarChartDataEntry(x: 1, y: 812))
         entries.append(BarChartDataEntry(x: 2, y: 634))
         entries.append(BarChartDataEntry(x: 3, y: 712))
         let dataSet = BarChartDataSet(entries: entries, label: "Comm Bank")
+        dataSet.setColor(theme.textBackgroundColor.withAlphaComponent(0.5))
+        dataSet.highlightColor = theme.textBackgroundColor
+        dataSet.valueTextColor = theme.textBackgroundColor
         let data = BarChartData(dataSet: dataSet)
         return data
     }
@@ -66,6 +71,8 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
         chart.xAxis.enabled = false
         chart.leftAxis.enabled = false
         chart.gridBackgroundColor = .clear
+        chart.drawBarShadowEnabled = false
+        chart.xAxis.labelTextColor = theme.textColor
         completion(chart)
     }
 
