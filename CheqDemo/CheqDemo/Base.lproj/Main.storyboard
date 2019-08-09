@@ -82,17 +82,28 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="xig-ZO-alX">
+                                <rect key="frame" x="20" y="341" width="374" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="qCu-bL-a14"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zsq-Fy-do7" firstAttribute="leading" secondItem="B5r-D8-eWa" secondAttribute="leading" id="8NA-vT-xR7"/>
                             <constraint firstItem="hUl-G7-30h" firstAttribute="top" secondItem="zsq-Fy-do7" secondAttribute="bottom" id="C2Y-XQ-qMZ"/>
+                            <constraint firstItem="B5r-D8-eWa" firstAttribute="trailing" secondItem="xig-ZO-alX" secondAttribute="trailing" constant="20" id="EP0-YG-M9v"/>
                             <constraint firstItem="hUl-G7-30h" firstAttribute="height" secondItem="zsq-Fy-do7" secondAttribute="height" multiplier="3:2" id="Lva-aZ-k2y"/>
+                            <constraint firstItem="xig-ZO-alX" firstAttribute="leading" secondItem="B5r-D8-eWa" secondAttribute="leading" constant="20" id="PqG-1X-CUk"/>
                             <constraint firstItem="hUl-G7-30h" firstAttribute="trailing" secondItem="B5r-D8-eWa" secondAttribute="trailing" id="SnQ-TI-C4X"/>
                             <constraint firstItem="zsq-Fy-do7" firstAttribute="trailing" secondItem="B5r-D8-eWa" secondAttribute="trailing" id="XNM-VL-78M"/>
                             <constraint firstItem="zsq-Fy-do7" firstAttribute="top" secondItem="B5r-D8-eWa" secondAttribute="top" id="dlK-sa-eGN"/>
                             <constraint firstItem="hUl-G7-30h" firstAttribute="bottom" secondItem="B5r-D8-eWa" secondAttribute="bottom" id="ewe-gG-gOc"/>
                             <constraint firstItem="hUl-G7-30h" firstAttribute="leading" secondItem="B5r-D8-eWa" secondAttribute="leading" id="hWo-Ad-bDj"/>
+                            <constraint firstItem="hUl-G7-30h" firstAttribute="top" secondItem="xig-ZO-alX" secondAttribute="bottom" id="yzD-hm-AXf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B5r-D8-eWa"/>
                     </view>
@@ -100,6 +111,7 @@
                     <connections>
                         <outlet property="carouselCollectionView" destination="zsq-Fy-do7" id="GFN-xX-46B"/>
                         <outlet property="gridCollectionView" destination="hUl-G7-30h" id="aVC-DA-K6U"/>
+                        <outlet property="pageControl" destination="xig-ZO-alX" id="Oxu-LF-V3k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgO-hB-XY0" userLabel="First Responder" sceneMemberID="firstResponder"/>

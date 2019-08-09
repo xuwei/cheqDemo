@@ -12,7 +12,9 @@ import Charts
 class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
 
     let theme = PrimaryTheme()
+    var controllerView: UIView?
     var collectionView: UICollectionView?
+    var pageControl: UIPageControl?
     var delegate: ChartCollectionViewCoordinatorDelegate?
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -30,7 +32,7 @@ class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIC
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         let chartCell = cell as! ChartCollectionViewCellProtocol
-        chartCell.animate()
+//        chartCell.animate()
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -59,10 +61,23 @@ extension CarouselCollectionViewCoordinator: UICollectionViewDelegateFlowLayout 
 }
 
 extension CarouselCollectionViewCoordinator: UIScrollViewDelegate {
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        guard let collectionView = collectionView else { return }
 
-        // center cells 
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        updatePaging()
+    }
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        updatePaging()
+    }
+
+    func updatePaging() {
+        guard let collectionView = collectionView, let view = controllerView else { return }
+        let center = collectionView.center
+        // center cell
+        let indexPath = collectionView.indexPathForItem(at: view.convert(center, to: collectionView))
+        guard let idxPath = indexPath else { return }
+        collectionView.scrollToItem(at: idxPath, at: .centeredHorizontally, animated: true)
+        self.pageControl?.currentPage = idxPath.row
     }
 }
 

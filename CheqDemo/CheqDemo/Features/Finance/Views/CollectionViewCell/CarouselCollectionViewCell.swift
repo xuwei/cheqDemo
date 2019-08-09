@@ -25,6 +25,8 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         setup { [weak self] view in
             guard let self = self else { return }
             self.barView = view as! BarChartView
+            self.barView.pinchZoomEnabled = false
+            self.barView.doubleTapToZoomEnabled = false
             self.contentView.addSubview(barView)
             AutoLayout.pinToSuperview(self.barView)
             self.barView.data = loadData()

@@ -18,9 +18,10 @@ class FinanceViewController: UIViewController {
     @IBOutlet var pageControl: UIPageControl!
 
     let carouselCoordintor = CarouselCollectionViewCoordinator()
+
     let gridCoordinator = GridCollectionViewCoordinator()
     let theme = PrimaryTheme()
-    let viewModel = FinanceViewModel("Expenses")
+    var viewModel = FinanceViewModel("Expenses")
     var menuView: NavigationDropdownMenu?
     var menuTitles = [String]()
 
@@ -31,6 +32,10 @@ class FinanceViewController: UIViewController {
         self.menuTitles = self.buildMenuTitles()
         setupCollectionView()
         setupDropdown()
+        self.viewModel.load {
+            self.pageControl.isUserInteractionEnabled = false
+            self.pageControl.numberOfPages = viewModel.barChartModels.count
+        }
     }
 
     func buildMenuTitles()->[String] {
@@ -42,6 +47,18 @@ class FinanceViewController: UIViewController {
     }
 
     func setupCollectionView() {
+        self.carouselCoordintor.controllerView = self.view
+        self.carouselCoordintor.collectionView = self.carouselCollectionView
+        self.carouselCoordintor.pageControl = self.pageControl
+        self.carouselCollectionView.delegate = self.carouselCoordintor
+        self.carouselCollectionView.dataSource = self.carouselCoordintor
+        self.gridCoordinator.collectionView = self.gridCollectionView
+        self.gridCollectionView.delegate = self.gridCoordinator
+        self.gridCollectionView.dataSource = self.gridCoordinator
+        setupCollectionViewPadding()
+    }
+
+    func setupCollectionViewPadding() {
         switch (self.traitCollection.horizontalSizeClass) {
         case .compact:
             theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.compactSize.width, direction: .horizontal)
@@ -56,19 +73,12 @@ class FinanceViewController: UIViewController {
             // detect unhandle trait class before getting out to production
             fatalError("support new enum type")
         }
-
-        self.carouselCoordintor.collectionView = self.carouselCollectionView
-        self.carouselCollectionView.delegate = self.carouselCoordintor
-        self.carouselCollectionView.dataSource = self.carouselCoordintor
-        self.gridCoordinator.collectionView = self.gridCollectionView
-        self.gridCollectionView.delegate = self.gridCoordinator
-        self.gridCollectionView.dataSource = self.gridCoordinator
     }
 
     func setupDropdown() {
         self.menuView = NavigationDropdownMenu(title: Title.index(0), items: self.menuTitles)
         guard let menuView = menuView else { return }
-        menuView.arrowTintColor = .red
+        menuView.arrowTintColor = theme.linksColor
         self.navigationItem.titleView = menuView
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print(self.menuTitles[indexPath])
@@ -79,6 +89,9 @@ class FinanceViewController: UIViewController {
 extension FinanceViewController: ChartCollectionViewCoordinatorDelegate {
     func selectedCell(_ indexPath: IndexPath, collectionView: UICollectionView) {
         // update pageControl
+        if type(of: collectionView) == CarouselCollectionViewCell.self {
+            self.pageControl.currentPage = indexPath.row
+        }
     }
 }
 

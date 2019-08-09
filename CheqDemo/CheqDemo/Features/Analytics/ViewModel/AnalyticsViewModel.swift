@@ -8,7 +8,6 @@
 
 import UIKit
 
-struct AnalyticsViewModel: ViewModelProtocol {
-    func load() {
-    }
+class AnalyticsViewModel: BaseViewModel {
+   
 }

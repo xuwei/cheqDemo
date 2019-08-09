@@ -14,6 +14,14 @@ enum ScrollDirection {
 
 struct PrimaryTheme: AppThemeProtocol {
 
+    var textColor: UIColor {
+        get { return .black }
+    }
+
+    var linksColor: UIColor {
+        get { return .blue }
+    }
+
     var defaultFont: UIFont {
         get {
             return UIFont.systemFont(ofSize: 12.0)

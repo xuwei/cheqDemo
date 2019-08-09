@@ -25,18 +25,23 @@ enum FinancialPeriod {
     static let allStringValues = [month.string, quarterly.string, annually.string]
 }
 
-struct FinanceViewModel: ViewModelProtocol {
+class FinanceViewModel: BaseViewModel {
 
     let title: String
     let filters = FinancialPeriod.allValues
-    let barChartModels: [ChartModel] = []
-    let pieChartModels: [ChartModel] = []
+    var barChartModels: [ChartModel] = []
+    var pieChartModels: [ChartModel] = []
 
     init(_ title: String) {
         self.title = title
     }
 
-    func load() {
-        
+    override func load(_ complete: () -> Void) {
+        self.barChartModels.append(ChartModelUtil.fakeChartModel())
+        self.barChartModels.append(ChartModelUtil.fakeChartModel())
+        self.barChartModels.append(ChartModelUtil.fakeChartModel())
+        self.barChartModels.append(ChartModelUtil.fakeChartModel())
+        self.barChartModels.append(ChartModelUtil.fakeChartModel())
+        complete()
     }
 }

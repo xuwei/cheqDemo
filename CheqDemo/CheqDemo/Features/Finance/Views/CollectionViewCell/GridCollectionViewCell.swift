@@ -24,6 +24,8 @@ class GridCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = .orange
         self.setup { view in
             self.pie = view as! PieChartView
+            self.pie.rotationWithTwoFingers = false
+            self.pie.rotationEnabled = false 
             self.contentView.addSubview(pie)
             AutoLayout.pinToSuperview(pie)
             pie.data = loadData()

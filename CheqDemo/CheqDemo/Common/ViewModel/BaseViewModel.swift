@@ -8,6 +8,9 @@
 
 import UIKit
 
-protocol ViewModelProtocol {
-    func load()
+class BaseViewModel {
+    func load(_ complete: ()->Void) {
+        // TO BE IMPLEMENT
+        complete()
+    }
 }

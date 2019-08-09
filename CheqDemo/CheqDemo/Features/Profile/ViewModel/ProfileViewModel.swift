@@ -8,9 +8,9 @@
 
 import UIKit
 
-struct ProfileViewModel: ViewModelProtocol {
-    func load() {
+class ProfileViewModel: BaseViewModel {
+    override func load(_ complete: () -> Void) {
+        // TO BE IMPLEMENTED
+        complete()
     }
-
-
 }
