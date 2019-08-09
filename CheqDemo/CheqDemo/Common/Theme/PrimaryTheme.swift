@@ -17,6 +17,15 @@ struct PrimaryTheme: AppThemeProtocol {
 
     func cardStyling(_ view: UIView, bgColor: UIColor) {
         view.backgroundColor = bgColor
+        view.layer.masksToBounds = false
+        view.layer.cornerRadius = 20.0
+        view.layer.shadowPath =
+            UIBezierPath(roundedRect: view.layer.bounds,
+                         cornerRadius: view.layer.cornerRadius).cgPath
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowOffset = CGSize(width: 5, height: 5)
+        view.layer.shadowRadius = view.layer.cornerRadius / 2.0
     }
 
     func cardStyling(_ view: UIView, bgColors: [UIColor]) {

@@ -31,6 +31,10 @@ class GridCollectionViewCell: UICollectionViewCell {
             self.pie.entryLabelFont = theme.defaultFont
             self.pie.entryLabelColor = theme.textColor
             self.pie.drawHoleEnabled = true
+            self.pie.drawCenterTextEnabled = true
+            self.pie.legend.verticalAlignment = .center
+            self.pie.legend.horizontalAlignment = .center
+            self.pie.drawMarkers = false
             self.contentView.addSubview(pie)
             AutoLayout.pinToSuperview(pie)
             pie.data = loadData()
@@ -40,15 +44,18 @@ class GridCollectionViewCell: UICollectionViewCell {
     func loadData()-> PieChartData {
 
         var entries: [PieChartDataEntry] = Array()
+        let entry = PieChartDataEntry(value: 0.21, label: "$21")
+        let entry2 = PieChartDataEntry(value: 0.79, label: "")
+        
 
-        entries.append(PieChartDataEntry(value: 0.21, label: "$644"))
-        entries.append(PieChartDataEntry(value: 0.79, label: ""))
-
+        entries.append(entry2)
+        entries.append(entry)
         let dataSet = PieChartDataSet(entries: entries, label: "Household")
         dataSet.drawIconsEnabled = false
         dataSet.automaticallyDisableSliceSpacing = true
         let data = PieChartData(dataSet: dataSet)
-        dataSet.valueColors = [theme.alternativeColor1, theme.alternativeOrangeColor, theme.alternativeColor4]
+        dataSet.colors = GradientView.randGradientSet()
+        dataSet.valueTextColor = .clear
         return data
     }
 }

@@ -13,7 +13,6 @@ class CarouselCollectionViewCell: UICollectionViewCell {
 
     let theme = PrimaryTheme()
     var barView: BarChartView = BarChartView()
-    @IBOutlet var bg: UIView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -68,15 +67,20 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
     func setup(completion: (UIView) -> Void) {
         let chart = BarChartView(frame: self.contentView.frame)
         chart.rightAxis.enabled = false
-        chart.xAxis.enabled = false
+        chart.xAxis.enabled = true
         chart.leftAxis.enabled = false
         chart.gridBackgroundColor = .clear
         chart.drawBarShadowEnabled = false
-        chart.xAxis.labelTextColor = theme.textColor
+        chart.xAxis.labelTextColor = theme.textBackgroundColor
+        chart.legend.textColor = theme.textBackgroundColor
+        chart.legend.font = theme.defaultFont
+        chart.legend.verticalAlignment = .top
+        chart.xAxis.valueFormatter = ChartFormatter()
+        chart.xAxis.labelPosition = .bottom
         completion(chart)
     }
 
     func animate() {
-        self.barView.animate(yAxisDuration: 0.25, easingOption: .easeInOutBounce)
+        self.barView.animate(yAxisDuration: 0.5, easingOption: .easeInOutBounce)
     }
 }

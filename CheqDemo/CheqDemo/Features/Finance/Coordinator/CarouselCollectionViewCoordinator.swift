@@ -47,12 +47,10 @@ extension CarouselCollectionViewCoordinator: UIScrollViewDelegate {
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         updatePaging()
-        snapToCell()
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         updatePaging()
-        snapToCell()
     }
 
     func updatePaging() {
