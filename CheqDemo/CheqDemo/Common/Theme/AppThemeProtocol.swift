@@ -14,4 +14,11 @@ protocol AppThemeProtocol {
     var primaryColor: UIColor { get }
     var backgroundColor: UIColor { get }
     var alternativeColor: UIColor { get }
+
+    var longAnimationDuration: TimeInterval { get }
+    var mediumAnimationDuration: TimeInterval { get }
+    var quickAnimationDuration: TimeInterval { get }
+    
+    func cardStyling(_ view: UIView)
+    func collectionViewPadding(_ collectionView: UICollectionView, cellLength: CGFloat, direction: ScrollDirection)
 }

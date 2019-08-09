@@ -8,7 +8,9 @@
 
 import UIKit
 
-struct ChartModel: Decodable {
-    let title: String 
+struct ChartModel {
+
+    let title: String
+    let type: Int
     let dataSet: [String: Decimal]
 }

@@ -13,6 +13,6 @@ enum CollectionViewIdentifier: String {
     case GridCollectionView = "GridCollectionView"
 }
 
-protocol CollectionViewCoordinatorDelegate {
+protocol ChartCollectionViewCoordinatorDelegate {
     func selectedCell(_ indexPath: IndexPath, collectionView: UICollectionView)
 }

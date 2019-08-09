@@ -7,16 +7,36 @@
 //
 
 import UIKit
-import RxSwift
+
+enum FinancialPeriod {
+    case month
+    case quarterly
+    case annually
+
+    var string: String {
+        switch self {
+        case .month: return "Monthly"
+        case .quarterly: return "Quarterly"
+        case .annually: return "Annually"
+        }
+    }
+
+    static let allValues = [month, quarterly, annually]
+    static let allStringValues = [month.string, quarterly.string, annually.string]
+}
 
 struct FinanceViewModel: ViewModelProtocol {
 
-    let barChartModels = PublishSubject<[BarChartModel]>()
-    let pieChartModels = PublishSubject<[PieChartModel]>()
+    let title: String
+    let filters = FinancialPeriod.allValues
+    let barChartModels: [ChartModel] = []
+    let pieChartModels: [ChartModel] = []
+
+    init(_ title: String) {
+        self.title = title
+    }
 
     func load() {
         
     }
-
-
 }

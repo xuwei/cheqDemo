@@ -10,10 +10,12 @@ import UIKit
 
 class TabViewController: UITabBarController {
 
+    let theme = PrimaryTheme()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .yellow
+        self.view.backgroundColor = theme.backgroundColor
     }
 }

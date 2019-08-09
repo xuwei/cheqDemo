@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		044E9FAE47E09879F8F996C6 /* Pods_CheqDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33A3CE4B21EA317051137B7 /* Pods_CheqDemoTests.framework */; };
 		3F91E9A359B3A8B546EF755A /* Pods_CheqDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38CA3D1B346D4F3ECE2827EC /* Pods_CheqDemo.framework */; };
-		9629A59022FC32CC00828FCF /* BarChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9629A58F22FC32CC00828FCF /* BarChartModel.swift */; };
-		9629A59222FC32F000828FCF /* PieChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9629A59122FC32F000828FCF /* PieChartModel.swift */; };
+		9629A59022FC32CC00828FCF /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9629A58F22FC32CC00828FCF /* ChartModel.swift */; };
 		9629A59522FC460200828FCF /* PrimaryTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9629A59422FC460200828FCF /* PrimaryTheme.swift */; };
+		9629A5A322FCCBC400828FCF /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9629A5A222FCCBC400828FCF /* AutoLayout.swift */; };
 		963D62EE22FB1DE0006344C9 /* CollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */; };
 		963D62F022FB2231006344C9 /* CarouselCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62EF22FB2230006344C9 /* CarouselCollectionViewCoordinator.swift */; };
 		963D62F222FB225B006344C9 /* GridCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */; };
@@ -24,10 +24,8 @@
 		9676524022FB05D1001E43E0 /* AnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676523F22FB05D1001E43E0 /* AnalyticsViewController.swift */; };
 		9676524222FB060E001E43E0 /* FinanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524122FB060E001E43E0 /* FinanceViewController.swift */; };
 		9676524522FB064C001E43E0 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524422FB064C001E43E0 /* ViewModelProtocol.swift */; };
-		9676524722FB0691001E43E0 /* CardViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524622FB0691001E43E0 /* CardViewProtocol.swift */; };
+		9676524722FB0691001E43E0 /* ChartCollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524622FB0691001E43E0 /* ChartCollectionViewCellProtocol.swift */; };
 		9676524B22FB06DB001E43E0 /* AppThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524A22FB06DB001E43E0 /* AppThemeProtocol.swift */; };
-		9676524E22FB071E001E43E0 /* PieCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524D22FB071E001E43E0 /* PieCardView.swift */; };
-		9676525022FB0754001E43E0 /* BarCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676524F22FB0754001E43E0 /* BarCardView.swift */; };
 		9676525222FB07A1001E43E0 /* FinanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525122FB07A1001E43E0 /* FinanceViewModel.swift */; };
 		9676525422FB07C0001E43E0 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525322FB07C0001E43E0 /* ProfileViewModel.swift */; };
 		9676525622FB07E5001E43E0 /* AnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525522FB07E4001E43E0 /* AnalyticsViewModel.swift */; };
@@ -54,9 +52,9 @@
 		44FC537C7FA5F20A118E5EE3 /* Pods-CheqDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemo.release.xcconfig"; path = "Target Support Files/Pods-CheqDemo/Pods-CheqDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6BC1742E601FD3D7F376A4B3 /* Pods-CheqDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-CheqDemoTests/Pods-CheqDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		79BDF7ED3FA15B62DEDE5A0E /* Pods-CheqDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemo.debug.xcconfig"; path = "Target Support Files/Pods-CheqDemo/Pods-CheqDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		9629A58F22FC32CC00828FCF /* BarChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartModel.swift; sourceTree = "<group>"; };
-		9629A59122FC32F000828FCF /* PieChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartModel.swift; sourceTree = "<group>"; };
+		9629A58F22FC32CC00828FCF /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
 		9629A59422FC460200828FCF /* PrimaryTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTheme.swift; sourceTree = "<group>"; };
+		9629A5A222FCCBC400828FCF /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewProtocol.swift; sourceTree = "<group>"; };
 		963D62EF22FB2230006344C9 /* CarouselCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCoordinator.swift; sourceTree = "<group>"; };
 		963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCoordinator.swift; sourceTree = "<group>"; };
@@ -73,10 +71,8 @@
 		9676523F22FB05D1001E43E0 /* AnalyticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewController.swift; sourceTree = "<group>"; };
 		9676524122FB060E001E43E0 /* FinanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewController.swift; sourceTree = "<group>"; };
 		9676524422FB064C001E43E0 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
-		9676524622FB0691001E43E0 /* CardViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewProtocol.swift; sourceTree = "<group>"; };
+		9676524622FB0691001E43E0 /* ChartCollectionViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCollectionViewCellProtocol.swift; sourceTree = "<group>"; };
 		9676524A22FB06DB001E43E0 /* AppThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeProtocol.swift; sourceTree = "<group>"; };
-		9676524D22FB071E001E43E0 /* PieCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieCardView.swift; sourceTree = "<group>"; };
-		9676524F22FB0754001E43E0 /* BarCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarCardView.swift; sourceTree = "<group>"; };
 		9676525122FB07A1001E43E0 /* FinanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceViewModel.swift; sourceTree = "<group>"; };
 		9676525322FB07C0001E43E0 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		9676525522FB07E4001E43E0 /* AnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsViewModel.swift; sourceTree = "<group>"; };
@@ -130,15 +126,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9629A58B22FC300B00828FCF /* Charts */ = {
-			isa = PBXGroup;
-			children = (
-				9676524D22FB071E001E43E0 /* PieCardView.swift */,
-				9676524F22FB0754001E43E0 /* BarCardView.swift */,
-			);
-			path = Charts;
-			sourceTree = "<group>";
-		};
 		9629A58C22FC302000828FCF /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,18 +138,9 @@
 		9629A58E22FC324F00828FCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9629A58F22FC32CC00828FCF /* BarChartModel.swift */,
-				9629A59122FC32F000828FCF /* PieChartModel.swift */,
+				9629A58F22FC32CC00828FCF /* ChartModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		9629A59322FC45AC00828FCF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				9629A58B22FC300B00828FCF /* Charts */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		9629A59622FC462D00828FCF /* ViewModel */ = {
@@ -196,6 +174,14 @@
 				963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		9629A59F22FCC73C00828FCF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9629A5A222FCCBC400828FCF /* AutoLayout.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		9676520722FAFD01001E43E0 = {
@@ -293,7 +279,7 @@
 		9676524322FB061B001E43E0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				9629A59322FC45AC00828FCF /* Views */,
+				9629A59F22FCC73C00828FCF /* Util */,
 				9676524922FB06C0001E43E0 /* Theme */,
 				9676524822FB06B6001E43E0 /* Protocol */,
 			);
@@ -304,7 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				9676524422FB064C001E43E0 /* ViewModelProtocol.swift */,
-				9676524622FB0691001E43E0 /* CardViewProtocol.swift */,
+				9676524622FB0691001E43E0 /* ChartCollectionViewCellProtocol.swift */,
 				963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */,
 			);
 			path = Protocol;
@@ -518,10 +504,9 @@
 			files = (
 				9676525D22FB0856001E43E0 /* FinanceService.swift in Sources */,
 				963D62F222FB225B006344C9 /* GridCollectionViewCoordinator.swift in Sources */,
-				9676524722FB0691001E43E0 /* CardViewProtocol.swift in Sources */,
+				9676524722FB0691001E43E0 /* ChartCollectionViewCellProtocol.swift in Sources */,
 				9676525B22FB083D001E43E0 /* ProfileService.swift in Sources */,
-				9629A59022FC32CC00828FCF /* BarChartModel.swift in Sources */,
-				9629A59222FC32F000828FCF /* PieChartModel.swift in Sources */,
+				9629A59022FC32CC00828FCF /* ChartModel.swift in Sources */,
 				9676526222FB156E001E43E0 /* CarouselCollectionViewCell.swift in Sources */,
 				963D62EE22FB1DE0006344C9 /* CollectionViewProtocol.swift in Sources */,
 				9676524222FB060E001E43E0 /* FinanceViewController.swift in Sources */,
@@ -535,8 +520,7 @@
 				9676524B22FB06DB001E43E0 /* AppThemeProtocol.swift in Sources */,
 				9676524522FB064C001E43E0 /* ViewModelProtocol.swift in Sources */,
 				9676526422FB158B001E43E0 /* GridCollectionViewCell.swift in Sources */,
-				9676524E22FB071E001E43E0 /* PieCardView.swift in Sources */,
-				9676525022FB0754001E43E0 /* BarCardView.swift in Sources */,
+				9629A5A322FCCBC400828FCF /* AutoLayout.swift in Sources */,
 				9676525922FB082F001E43E0 /* AnalyticsService.swift in Sources */,
 				9676525422FB07C0001E43E0 /* ProfileViewModel.swift in Sources */,
 				9676523E22FB05C1001E43E0 /* ProfileViewController.swift in Sources */,
