@@ -30,7 +30,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
             self.barView.pinchZoomEnabled = false
             self.barView.doubleTapToZoomEnabled = false
             self.contentView.addSubview(barView)
-            AutoLayout.pinToSuperview(self.barView)
+            AutoLayout.pinToSuperview(self.barView, padding: 10.0)
             self.barView.data = loadData()
         }
     }
@@ -71,12 +71,17 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
         chart.leftAxis.enabled = false
         chart.gridBackgroundColor = .clear
         chart.drawBarShadowEnabled = false
-        chart.xAxis.labelTextColor = theme.textBackgroundColor
-        chart.legend.textColor = theme.textBackgroundColor
+        chart.xAxis.labelTextColor = theme.textColor
+        chart.xAxis.drawAxisLineEnabled = false
+        chart.xAxis.drawGridLinesEnabled = false
+        chart.legend.textColor = theme.textColor
         chart.legend.font = theme.defaultFont
         chart.legend.verticalAlignment = .top
         chart.xAxis.valueFormatter = ChartFormatter()
-        chart.xAxis.labelPosition = .bottom
+        chart.xAxis.labelPosition =  .bottom
+//        chart.xAxis.granularity = 1
+//        chart.xAxis.granularityEnabled = true
+        chart.xAxis.labelCount = 4
         completion(chart)
     }
 

@@ -83,6 +83,8 @@ class FinanceViewController: UIViewController {
         self.menuView = NavigationDropdownMenu(title: Title.index(0), items: self.menuTitles)
         guard let menuView = menuView else { return }
         menuView.arrowTintColor = theme.linksColor
+        menuView.navigationBarTitleFont = theme.headerFont
+        menuView.cellTextLabelFont = theme.defaultFont
         self.navigationItem.titleView = menuView
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             print(self.menuTitles[indexPath])

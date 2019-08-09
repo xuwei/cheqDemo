@@ -110,7 +110,7 @@ extension PrimaryTheme {
     }
 
     var backgroundColor: UIColor {
-        get { return UIColor(hex: "E8FFFF") }
+        get { return UIColor(hex: "FFFFFF") }
     }
 
     var textBackgroundColor: UIColor {
@@ -132,7 +132,7 @@ extension PrimaryTheme {
     }
 
     var headerFont: UIFont {
-        get { return UIFont.boldSystemFont(ofSize: 20.0)}
+        get { return UIFont.systemFont(ofSize: 20.0)}
     }
 }
 

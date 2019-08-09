@@ -34,9 +34,10 @@ class GridCollectionViewCell: UICollectionViewCell {
             self.pie.drawCenterTextEnabled = true
             self.pie.legend.verticalAlignment = .center
             self.pie.legend.horizontalAlignment = .center
+            self.pie.legend.drawInside = true 
             self.pie.drawMarkers = false
             self.contentView.addSubview(pie)
-            AutoLayout.pinToSuperview(pie)
+            AutoLayout.pinToSuperview(pie, padding: 10.0)
             pie.data = loadData()
         }
     }
