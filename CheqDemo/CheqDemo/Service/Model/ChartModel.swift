@@ -1,5 +1,5 @@
 //
-//  PieChartModel.swift
+//  BarChartModel.swift
 //  CheqDemo
 //
 //  Created by XUWEI LIANG on 8/8/19.
@@ -8,8 +8,7 @@
 
 import UIKit
 
-struct PieChartModel: Decodable {
-    let title: String
-    let amount: Decimal
-    let percentage: Decimal
+struct ChartModel: Decodable {
+    let title: String 
+    let dataSet: [String: Decimal]
 }
