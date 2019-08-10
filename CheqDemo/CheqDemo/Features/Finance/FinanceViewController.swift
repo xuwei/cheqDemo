@@ -30,7 +30,11 @@ class FinanceViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         self.title = viewModel.title
         self.menuTitles = self.buildMenuTitles()
-
+        self.carouselCoordintor = CarouselCollectionViewCoordinator(self.viewModel.carouselCoordViewModel)
+        self.gridCoordinator = GridCollectionViewCoordinator(self.viewModel.gridCoordViewModel)
+        self.pageControl.isUserInteractionEnabled = false
+        self.setupCollectionView()
+        self.setupDropdown()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -38,12 +42,7 @@ class FinanceViewController: UIViewController {
         sharedAppConfig.showSpinner()
         self.viewModel.load {
             sharedAppConfig.hideSpinner()
-            self.carouselCoordintor = CarouselCollectionViewCoordinator(self.viewModel.carouselCoordViewModel)
-            self.gridCoordinator = GridCollectionViewCoordinator(self.viewModel.gridCoordViewModel)
-            self.pageControl.isUserInteractionEnabled = false
-            self.pageControl.numberOfPages = 4
-            self.setupCollectionView()
-            self.setupDropdown()
+            self.pageControl.numberOfPages = self.viewModel.carouselCoordViewModel.barChartModels.count
             self.carouselCollectionView.reloadData()
             self.gridCollectionView.reloadData()
         }
