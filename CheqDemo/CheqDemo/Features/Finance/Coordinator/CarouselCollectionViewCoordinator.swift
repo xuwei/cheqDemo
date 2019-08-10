@@ -38,6 +38,7 @@ class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CarouselCollectionViewCell
         let chartModel = viewModel.barChartModels[indexPath.row]
         cell?.barView.loadData(chartModel)
+        cell?.barView.xAxis.labelCount = viewModel.barChartModels.count
         return cell ?? UICollectionViewCell()
     }
 

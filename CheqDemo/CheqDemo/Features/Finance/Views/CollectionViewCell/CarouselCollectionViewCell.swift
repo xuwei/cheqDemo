@@ -44,7 +44,6 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
 
     func setupChart() {
         self.barView = CBarChartView(frame: self.contentView.frame)
-        self.barView.xAxis.labelCount = 4
         self.contentView.addSubview(barView)
         AutoLayoutUtil.pinToSuperview(self.barView, padding: 0.0)
     }
