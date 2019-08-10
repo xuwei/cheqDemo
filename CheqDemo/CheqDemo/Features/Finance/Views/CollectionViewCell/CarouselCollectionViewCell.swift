@@ -11,14 +11,14 @@ import Charts
 
 class CarouselCollectionViewCell: UICollectionViewCell {
 
-    let theme = PrimaryTheme()
-    var barView: BarChartView = BarChartView()
+    let theme = sharedAppConfig.activeTheme
+    var barView = CBarChartView()
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.bounds = self.frame
-        theme.cardStyling(self, bgColors: GradientView.randGradientSet())
+        theme.cardStyling(self, bgColors: ColorUtil.randGradientSet())
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -26,11 +26,9 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = .purple
         setup { [weak self] view in
             guard let self = self else { return }
-            self.barView = view as! BarChartView
-            self.barView.pinchZoomEnabled = false
-            self.barView.doubleTapToZoomEnabled = false
+            self.barView = view as! CBarChartView
             self.contentView.addSubview(barView)
-            AutoLayout.pinToSuperview(self.barView, padding: 0.0)
+            AutoLayoutUtil.pinToSuperview(self.barView, padding: 0.0)
             self.barView.data = loadData()
         }
     }
@@ -51,6 +49,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
     }
 }
 
+// MARK: ChartCollectionViewCellProtocol
 extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
 
     static var compactSize: CGSize {
@@ -66,22 +65,7 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
     }
 
     func setup(completion: (UIView) -> Void) {
-        let chart = BarChartView(frame: self.contentView.frame)
-        chart.extraBottomOffset = 10.0
-        chart.legend.yOffset = 10.0
-        chart.rightAxis.enabled = false
-        chart.xAxis.enabled = true
-        chart.leftAxis.enabled = false
-        chart.gridBackgroundColor = .clear
-        chart.drawBarShadowEnabled = false
-        chart.xAxis.labelTextColor = theme.textColor
-        chart.xAxis.drawAxisLineEnabled = false
-        chart.xAxis.drawGridLinesEnabled = false
-        chart.legend.textColor = theme.textColor
-        chart.legend.font = theme.defaultFont
-        chart.legend.verticalAlignment = .top
-        chart.xAxis.valueFormatter = BarChartFormatter()
-        chart.xAxis.labelPosition =  .bottom
+        let chart = CBarChartView(frame: self.contentView.frame)
         chart.xAxis.labelCount = 4
         completion(chart)
     }

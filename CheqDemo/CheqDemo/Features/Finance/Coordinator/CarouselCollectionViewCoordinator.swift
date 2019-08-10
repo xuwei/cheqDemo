@@ -15,7 +15,7 @@ protocol CarouselCollectionViewCoordinatorDelegate {
 
 class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    let theme = PrimaryTheme()
+    let theme = sharedAppConfig.activeTheme
     var controllerView: UIView?
     var collectionView: UICollectionView?
     var delegate: ChartCollectionViewCoordinatorDelegate?

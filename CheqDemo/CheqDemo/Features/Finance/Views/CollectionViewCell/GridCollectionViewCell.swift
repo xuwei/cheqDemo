@@ -11,8 +11,8 @@ import Charts
 
 class GridCollectionViewCell: UICollectionViewCell {
 
-    var pie: PieChartView = PieChartView()
-    let theme = PrimaryTheme()
+    var pie = CPieChartView()
+    let theme = sharedAppConfig.activeTheme
     @IBOutlet var title: UILabel! 
 
     override func awakeFromNib() {
@@ -30,23 +30,9 @@ class GridCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
         self.backgroundColor = .orange
         self.setup { view in
-            self.pie = view as! PieChartView
-            self.pie.rotationWithTwoFingers = false
-            self.pie.rotationEnabled = false
-            self.pie.rotationAngle = 0.5
-            self.pie.entryLabelFont = theme.defaultFont
-            self.pie.entryLabelColor = theme.textColor
-            //self.pie.drawHoleEnabled = true
-            self.pie.drawCenterTextEnabled = false
-            self.pie.drawHoleEnabled = true
-            self.pie.holeRadiusPercent = 0.7
-            self.pie.legend.enabled = true
-            self.pie.legend.verticalAlignment = .top
-            self.pie.legend.horizontalAlignment = .left
-            self.pie.legend.xOffset = 10.0
-            self.pie.legend.yOffset = 10.0
+            self.pie = view as! CPieChartView
             self.contentView.addSubview(pie)
-            AutoLayout.pinToSuperview(pie, padding: 0.0)
+            AutoLayoutUtil.pinToSuperview(pie, padding: 0.0)
             pie.data = loadData()
         }
     }
@@ -62,7 +48,7 @@ class GridCollectionViewCell: UICollectionViewCell {
         dataSet.drawIconsEnabled = false
         dataSet.automaticallyDisableSliceSpacing = true
         let data = PieChartData(dataSet: dataSet)
-        dataSet.colors = [GradientView.randAlternateColor(), .clear]
+        dataSet.colors = [ColorUtil.randAlternateColor(), .clear]
         dataSet.valueColors = [.clear, .clear]
         dataSet.valueFont = theme.defaultFont
         dataSet.entryLabelColor = theme.textColor
@@ -70,6 +56,7 @@ class GridCollectionViewCell: UICollectionViewCell {
     }
 }
 
+// MARK: ChartCollectionViewCellProtocol
 extension GridCollectionViewCell: ChartCollectionViewCellProtocol {
     
     static var compactSize: CGSize {
@@ -85,7 +72,7 @@ extension GridCollectionViewCell: ChartCollectionViewCellProtocol {
     }
 
     func setup(completion: (UIView) -> Void) {
-        let chart = PieChartView(frame: self.contentView.frame)
+        let chart = CPieChartView(frame: self.contentView.frame)
         completion(chart)
     }
 

@@ -13,6 +13,10 @@ enum ScrollDirection {
     case horizontal, vertical
 }
 
+// this is an implementation of AppThemeProtocol
+// we can create more for different themes. e.g. DarkModeTheme, CBATheme, etc
+
+//MARK: styling logics
 struct PrimaryTheme: AppThemeProtocol {
 
     func cardStyling(_ view: UIView, bgColor: UIColor) {
@@ -56,13 +60,18 @@ struct PrimaryTheme: AppThemeProtocol {
     func collectionViewPadding(_ collectionView: UICollectionView, cellLength: CGFloat, direction: ScrollDirection) {
         switch(direction) {
         case .horizontal:
-            collectionView.contentInset = UIEdgeInsets(top: 10, left: cellLength*0.25, bottom: 10, right: cellLength*0.25)
+            collectionView.contentInset = UIEdgeInsets(top: padding, left: cellLength*0.25, bottom: padding, right: cellLength*0.25)
         case .vertical:
-            collectionView.contentInset = UIEdgeInsets(top: cellLength*0.25, left: 20, bottom: cellLength*0.25, right: 20)
+            collectionView.contentInset = UIEdgeInsets(top: cellLength*0.25, left: padding*2, bottom: cellLength*0.25, right: padding*2)
         }
+    }
+
+    var padding: CGFloat {
+        get { return 10.0 }
     }
 }
 
+//MARK: colors
 extension PrimaryTheme {
     var gradientBlueSet: [UIColor] {
     get {
@@ -126,6 +135,7 @@ extension PrimaryTheme {
     }
 }
 
+//MARK: fonts
 extension PrimaryTheme {
     var defaultFont: UIFont {
         get { return UIFont.systemFont(ofSize: 12.0)}
@@ -140,6 +150,7 @@ extension PrimaryTheme {
     }
 }
 
+//MARK: animation variables
 extension PrimaryTheme {
     var longAnimationDuration: TimeInterval { return 1.0 }
     var mediumAnimationDuration: TimeInterval { return 0.5 }

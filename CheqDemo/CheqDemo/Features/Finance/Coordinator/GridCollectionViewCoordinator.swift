@@ -12,7 +12,7 @@ import UIKit
 
 class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource  {
 
-    let theme = PrimaryTheme()
+    let theme = sharedAppConfig.activeTheme
     var collectionView: UICollectionView?
     var delegate: ChartCollectionViewCoordinatorDelegate?
 

@@ -10,7 +10,7 @@ import UIKit
 
 class TabViewController: UITabBarController {
 
-    let theme = PrimaryTheme()
+    let theme = sharedAppConfig.activeTheme
 
     override func viewDidLoad() {
         super.viewDidLoad()

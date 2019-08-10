@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct AutoLayout {
+struct AutoLayoutUtil {
 
     static func pinToSuperview(_ view: UIView, padding: CGFloat) {
         guard let superview = view.superview else { return }

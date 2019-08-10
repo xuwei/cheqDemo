@@ -9,6 +9,7 @@
 import UIKit
 
 class BaseViewModel {
+
     func load(_ complete: ()->Void) {
         // TO BE IMPLEMENT
         complete()

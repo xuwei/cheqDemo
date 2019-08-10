@@ -17,10 +17,11 @@ class FinanceViewController: UIViewController {
     @IBOutlet var gridCollectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
 
-    let carouselCoordintor = CarouselCollectionViewCoordinator()
 
+
+    let carouselCoordintor = CarouselCollectionViewCoordinator()
     let gridCoordinator = GridCollectionViewCoordinator()
-    let theme = PrimaryTheme()
+    let theme = sharedAppConfig.activeTheme
     var viewModel = FinanceViewModel("Expenses")
     var menuView: NavigationDropdownMenu?
     var menuTitles = [String]()
@@ -92,12 +93,14 @@ class FinanceViewController: UIViewController {
     }
 }
 
+// MARK: CarouselCollectionViewCoordinatorDelegate
 extension FinanceViewController: CarouselCollectionViewCoordinatorDelegate {
     func updatePaginControl(_ index: Int) {
         self.pageControl.currentPage = index
     }
 }
 
+// MARK: ChartCollectionViewCoordinatorDelegate
 extension FinanceViewController: ChartCollectionViewCoordinatorDelegate {
     func selectedCell(_ indexPath: IndexPath, collectionView: UICollectionView) {
     }
