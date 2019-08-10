@@ -11,8 +11,14 @@ import Foundation
 import Charts
 
 struct ChartModelUtil {
-    static func fakeChartModel()-> ChartModel {
-        return ChartModel(title: "hello", type: 0, dataSet: ["" : 0])
+    static func fakeBarChartModel()-> [ChartModel] {
+        let fakeData = ChartModel(title: "Comm Bank", type: .bar, dataSet: ["0" : 467.0, "1": 812.0, "2": 634.0, "3": 712.0])
+        return Array(repeating:fakeData, count: 4)
+    }
+
+    static func fakePieChartModel() -> [ChartModel] {
+        let fakeData = ChartModel(title: "Household", type: .pie, dataSet: ["value": 21.0, "remain": 79.0, "amount": "$644"])
+        return Array(repeating:fakeData, count: 10)
     }
 }
 

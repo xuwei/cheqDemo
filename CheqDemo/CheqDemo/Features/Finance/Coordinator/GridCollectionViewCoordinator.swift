@@ -14,15 +14,23 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
     let theme = sharedAppConfig.activeTheme
     var collectionView: UICollectionView?
     var delegate: ChartCollectionViewCoordinatorDelegate?
+    var viewModel: GridCoordinatorVewModel
+
+    init(_ viewModel: GridCoordinatorVewModel) {
+        self.viewModel = viewModel
+        super.init()
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.pieChartModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = String(describing: GridCollectionViewCell.self)
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? GridCollectionViewCell
+        let chartModel = viewModel.pieChartModels[indexPath.row]
+        cell?.pie.loadData(chartModel)
+        return cell ?? UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView,

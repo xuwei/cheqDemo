@@ -9,7 +9,7 @@
 import UIKit
 import Charts
 
-class CBarChartView: BarChartView, CChartViewProtocol {
+class CBarChartView: BarChartView {
 
     let theme = sharedAppConfig.activeTheme
 
@@ -22,7 +22,10 @@ class CBarChartView: BarChartView, CChartViewProtocol {
         super.init(coder: aDecoder)
         setupConfig()
     }
+}
 
+// MARK: CChartViewProtocol
+extension CBarChartView: CChartViewProtocol {
     func setupConfig() {
         self.extraBottomOffset = theme.padding
         self.legend.yOffset = theme.padding
@@ -37,9 +40,30 @@ class CBarChartView: BarChartView, CChartViewProtocol {
         self.legend.textColor = theme.textColor
         self.legend.font = theme.defaultFont
         self.legend.verticalAlignment = .top
-        self.xAxis.valueFormatter = CBarChartFormatter()
+//        self.xAxis.valueFormatter = CBarChartFormatter()
         self.xAxis.labelPosition =  .bottom
         self.pinchZoomEnabled = false
         self.doubleTapToZoomEnabled = false
+    }
+
+    func loadData(_ chartModel: ChartModel) {
+        guard chartModel.type == .bar else { return }
+//        let entries: [ChartDataEntry] = chartModel.dataSet.map{ (key, value) in
+//            BarChartDataEntry(x: key, y: value)
+//        }
+
+        let entries: [ChartDataEntry] = chartModel.dataSet.map { (arg: (key: String, value: Any)) -> ChartDataEntry in
+            let (key, value) = arg
+            let k = Double(key)!
+            let v = value as! Double
+            return BarChartDataEntry(x: k, y: v)
+        }
+        let dataSet = BarChartDataSet(entries: entries, label: chartModel.title)
+        dataSet.setColor(theme.textBackgroundColor.withAlphaComponent(theme.nonActiveAlpha))
+        dataSet.highlightColor = theme.textBackgroundColor
+        dataSet.valueTextColor = theme.textColor
+        dataSet.valueFont = theme.mediumFont
+        let data = BarChartData(dataSet: dataSet)
+        self.data = data
     }
 }

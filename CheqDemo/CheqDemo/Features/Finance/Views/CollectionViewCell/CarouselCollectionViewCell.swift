@@ -25,21 +25,6 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
         setupChart()
     }
-
-    func loadData()-> BarChartData {
-        var entries: [ChartDataEntry] = Array()
-        entries.append(BarChartDataEntry(x: 0, y: 467))
-        entries.append(BarChartDataEntry(x: 1, y: 812))
-        entries.append(BarChartDataEntry(x: 2, y: 634))
-        entries.append(BarChartDataEntry(x: 3, y: 712))
-        let dataSet = BarChartDataSet(entries: entries, label: "Comm Bank")
-        dataSet.setColor(theme.textBackgroundColor.withAlphaComponent(0.5))
-        dataSet.highlightColor = theme.textBackgroundColor
-        dataSet.valueTextColor = theme.textColor
-        dataSet.valueFont = theme.mediumFont
-        let data = BarChartData(dataSet: dataSet)
-        return data
-    }
 }
 
 // MARK: ChartCollectionViewCellProtocol
@@ -62,7 +47,6 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
         self.barView.xAxis.labelCount = 4
         self.contentView.addSubview(barView)
         AutoLayoutUtil.pinToSuperview(self.barView, padding: 0.0)
-        self.barView.data = loadData()
     }
 
     func animate() {

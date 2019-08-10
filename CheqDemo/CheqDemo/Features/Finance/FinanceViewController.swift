@@ -16,11 +16,12 @@ class FinanceViewController: UIViewController {
     @IBOutlet var carouselCollectionView: UICollectionView!
     @IBOutlet var gridCollectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
-
-    let carouselCoordintor = CarouselCollectionViewCoordinator()
-    let gridCoordinator = GridCollectionViewCoordinator()
-    let theme = sharedAppConfig.activeTheme
     var viewModel = FinanceViewModel("Expenses")
+    //placeholder to avoid optional, since we definitely know we will get them after viewModel loaded
+    var carouselCoordintor = CarouselCollectionViewCoordinator(CarouselCoordinatorViewModel())
+    var gridCoordinator = GridCollectionViewCoordinator(GridCoordinatorVewModel())
+    let theme = sharedAppConfig.activeTheme
+
     var menuView: NavigationDropdownMenu?
     var menuTitles = [String]()
 
@@ -29,11 +30,15 @@ class FinanceViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         self.title = viewModel.title
         self.menuTitles = self.buildMenuTitles()
-        setupCollectionView()
-        setupDropdown()
         self.viewModel.load {
+            self.carouselCoordintor = CarouselCollectionViewCoordinator(viewModel.carouselCoordViewModel)
+            self.gridCoordinator = GridCollectionViewCoordinator(viewModel.gridCoordViewModel)
             self.pageControl.isUserInteractionEnabled = false
-            self.pageControl.numberOfPages = viewModel.barChartModels.count
+            self.pageControl.numberOfPages = 4
+            setupCollectionView()
+            setupDropdown()
+            self.carouselCollectionView.reloadData()
+            self.gridCollectionView.reloadData()
         }
     }
 

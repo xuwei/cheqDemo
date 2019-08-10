@@ -8,10 +8,7 @@
 
 import UIKit
 
-class BaseViewModel {
+protocol BaseViewModel {
 
-    func load(_ complete: ()->Void) {
-        // TO BE IMPLEMENT
-        complete()
-    }
+    func load(_ complete: ()->Void)
 }

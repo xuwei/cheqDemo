@@ -15,6 +15,8 @@
 		963D62EE22FB1DE0006344C9 /* CollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */; };
 		963D62F022FB2231006344C9 /* CarouselCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62EF22FB2230006344C9 /* CarouselCollectionViewCoordinator.swift */; };
 		963D62F222FB225B006344C9 /* GridCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */; };
+		966A19E222FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */; };
+		966A19E622FEA95700A6E444 /* GridCoordinatorVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E522FEA95600A6E444 /* GridCoordinatorVewModel.swift */; };
 		9676521422FAFD01001E43E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676521322FAFD01001E43E0 /* AppDelegate.swift */; };
 		9676521B22FAFD01001E43E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9676521922FAFD01001E43E0 /* Main.storyboard */; };
 		9676521D22FAFD03001E43E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9676521C22FAFD03001E43E0 /* Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewProtocol.swift; sourceTree = "<group>"; };
 		963D62EF22FB2230006344C9 /* CarouselCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCoordinator.swift; sourceTree = "<group>"; };
 		963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCoordinator.swift; sourceTree = "<group>"; };
+		966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCoordinatorViewModel.swift; sourceTree = "<group>"; };
+		966A19E522FEA95600A6E444 /* GridCoordinatorVewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCoordinatorVewModel.swift; sourceTree = "<group>"; };
 		9676521022FAFD01001E43E0 /* CheqDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheqDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9676521322FAFD01001E43E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9676521A22FAFD01001E43E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,7 +145,6 @@
 		9629A58C22FC302000828FCF /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				96B0069C22FEA56700173743 /* New Group */,
 				9676526122FB156E001E43E0 /* CarouselCollectionViewCell.swift */,
 				9676526322FB158B001E43E0 /* GridCollectionViewCell.swift */,
 			);
@@ -175,6 +178,7 @@
 		9629A59922FC464A00828FCF /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				96B0069C22FEA56700173743 /* ViewModel */,
 				963D62EF22FB2230006344C9 /* CarouselCollectionViewCoordinator.swift */,
 				963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */,
 			);
@@ -375,11 +379,13 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
-		96B0069C22FEA56700173743 /* New Group */ = {
+		96B0069C22FEA56700173743 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */,
+				966A19E522FEA95600A6E444 /* GridCoordinatorVewModel.swift */,
 			);
-			path = "New Group";
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -589,6 +595,7 @@
 				96A65E7D22FD4B9300F1F7AB /* ColorUtil.swift in Sources */,
 				96B0069522FE70B100173743 /* CPieViewFormatter.swift in Sources */,
 				9676525222FB07A1001E43E0 /* FinanceViewModel.swift in Sources */,
+				966A19E622FEA95700A6E444 /* GridCoordinatorVewModel.swift in Sources */,
 				963D62F022FB2231006344C9 /* CarouselCollectionViewCoordinator.swift in Sources */,
 				9676524B22FB06DB001E43E0 /* AppThemeProtocol.swift in Sources */,
 				9676524522FB064C001E43E0 /* BaseViewModel.swift in Sources */,
@@ -596,6 +603,7 @@
 				9629A5A322FCCBC400828FCF /* AutoLayoutUtil.swift in Sources */,
 				9676525422FB07C0001E43E0 /* ProfileViewModel.swift in Sources */,
 				9676523E22FB05C1001E43E0 /* ProfileViewController.swift in Sources */,
+				966A19E222FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

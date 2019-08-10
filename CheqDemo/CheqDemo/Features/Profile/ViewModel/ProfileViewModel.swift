@@ -9,8 +9,7 @@
 import UIKit
 
 class ProfileViewModel: BaseViewModel {
-    override func load(_ complete: () -> Void) {
-        // TO BE IMPLEMENTED
+    func load(_ complete: () -> Void) {
         complete()
     }
 }

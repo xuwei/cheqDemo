@@ -7,23 +7,24 @@
 //
 
 import UIKit
+import PromiseKit
 
-class FinanceViewModel: BaseViewModel {
+class FinanceViewModel: NSObject, BaseViewModel {
 
     let title: String
     let filters = FinancialPeriod.AllCases()
-    var barChartModels: [ChartModel] = []
-    var pieChartModels: [ChartModel] = []
+    var carouselCoordViewModel = CarouselCoordinatorViewModel()
+    var gridCoordViewModel = GridCoordinatorVewModel()
 
     init(_ title: String) {
         self.title = title
     }
 
-    override func load(_ complete: () -> Void) {
-        self.barChartModels.append(ChartModelUtil.fakeChartModel())
-        self.barChartModels.append(ChartModelUtil.fakeChartModel())
-        self.barChartModels.append(ChartModelUtil.fakeChartModel())
-        self.barChartModels.append(ChartModelUtil.fakeChartModel())
-        complete()
+    func load(_ complete: () -> Void) {
+        carouselCoordViewModel.load {
+            gridCoordViewModel.load {
+                complete()
+            }
+        }
     }
 }

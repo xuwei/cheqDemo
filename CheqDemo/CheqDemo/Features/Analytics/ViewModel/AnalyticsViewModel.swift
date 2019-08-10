@@ -8,6 +8,10 @@
 
 import UIKit
 
-class AnalyticsViewModel: BaseViewModel {
+class AnalyticsViewModel: NSObject, BaseViewModel {
+    func load(_ complete: () -> Void) {
+        complete()
+    }
+
    
 }

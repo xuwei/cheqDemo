@@ -30,24 +30,6 @@ class GridCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
         self.setupChart()
     }
-
-    func loadData()-> PieChartData {
-
-        var entries: [PieChartDataEntry] = Array()
-        let entry = PieChartDataEntry(value: 21, label: "")
-        let entry2 = PieChartDataEntry(value: 79, label: "")
-        entries.append(entry)
-        entries.append(entry2)
-        let dataSet = PieChartDataSet(entries: entries, label: "Household")
-        dataSet.drawIconsEnabled = false
-        dataSet.automaticallyDisableSliceSpacing = true
-        let data = PieChartData(dataSet: dataSet)
-        dataSet.colors = [ColorUtil.randAlternateColor(), .clear]
-        dataSet.valueColors = [.clear, .clear]
-        dataSet.valueFont = theme.defaultFont
-        dataSet.entryLabelColor = theme.textColor
-        return data
-    }
 }
 
 // MARK: ChartCollectionViewCellProtocol
@@ -69,7 +51,6 @@ extension GridCollectionViewCell: ChartCollectionViewCellProtocol {
         self.pie = CPieChartView(frame: self.contentView.frame)
         self.contentView.addSubview(pie)
         AutoLayoutUtil.pinToSuperview(pie, padding: 0.0)
-        pie.data = loadData()
     }
 
     func animate() {

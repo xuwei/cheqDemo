@@ -21,15 +21,24 @@ class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIC
     var collectionView: UICollectionView?
     var delegate: ChartCollectionViewCoordinatorDelegate?
     var carouselDelegate: CarouselCollectionViewCoordinatorDelegate?
+    var viewModel: CarouselCoordinatorViewModel
+
+    init(_ viewModel: CarouselCoordinatorViewModel) {
+
+        self.viewModel = viewModel
+        super.init()
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return viewModel.barChartModels.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = String(describing: CarouselCollectionViewCell.self)
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? CarouselCollectionViewCell
+        let chartModel = viewModel.barChartModels[indexPath.row]
+        cell?.barView.loadData(chartModel)
+        return cell ?? UICollectionViewCell()
     }
 
     func collectionView(_ collectionView: UICollectionView,

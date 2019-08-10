@@ -1,0 +1,24 @@
+//
+//  CarouselCellViewModel.swift
+//  CheqDemo
+//
+//  Created by XUWEI LIANG on 10/8/19.
+//  Copyright © 2019 WiseTree Solutions Pty Ltd. All rights reserved.
+//
+
+import UIKit
+
+class CarouselCoordinatorViewModel: NSObject, BaseViewModel {
+
+    var barChartModels: [ChartModel] = []
+
+    override init() {
+        super.init()
+    }
+
+    // load data for carousel
+    func load(_ complete: () -> Void) {
+        self.barChartModels = ChartModelUtil.fakeBarChartModel()
+        complete()
+    }
+}
