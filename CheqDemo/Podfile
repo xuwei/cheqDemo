@@ -8,7 +8,6 @@ target 'CheqDemo' do
   # Pods for CheqDemo
   pod 'Charts', '~> 3.3'
   pod 'NavigationDropdownMenu'
-  pod 'PromiseKit', '~> 6.8'
   pod 'Hex'
   pod 'SwiftSpinner'
   

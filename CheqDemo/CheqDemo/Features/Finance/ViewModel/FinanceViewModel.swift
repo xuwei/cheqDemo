@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import PromiseKit
 
 class FinanceViewModel: NSObject, BaseViewModel {
 
     let title: String
     let filters = FinancialPeriod.AllCases()
     var carouselCoordViewModel = CarouselCoordinatorViewModel()
-    var gridCoordViewModel = GridCoordinatorVewModel()
+    var gridCoordViewModel = GridCoordinatorViewModel()
 
     init(_ title: String) {
         self.title = title

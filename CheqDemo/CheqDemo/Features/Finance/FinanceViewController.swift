@@ -19,7 +19,7 @@ class FinanceViewController: UIViewController {
     var viewModel = FinanceViewModel("Expenses")
     //placeholder to avoid optional, since we definitely know we will get them after viewModel loaded
     var carouselCoordintor = CarouselCollectionViewCoordinator(CarouselCoordinatorViewModel())
-    var gridCoordinator = GridCollectionViewCoordinator(GridCoordinatorVewModel())
+    var gridCoordinator = GridCollectionViewCoordinator(GridCoordinatorViewModel())
     let theme = sharedAppConfig.activeTheme
 
     var menuView: NavigationDropdownMenu?
@@ -43,9 +43,15 @@ class FinanceViewController: UIViewController {
         self.viewModel.load {
             sharedAppConfig.hideSpinner()
             self.pageControl.numberOfPages = self.viewModel.carouselCoordViewModel.barChartModels.count
-            self.carouselCollectionView.reloadData()
-            self.gridCollectionView.reloadData()
+            self.reloadUI()
         }
+    }
+
+    func reloadUI() {
+        self.carouselCollectionView.collectionViewLayout.invalidateLayout()
+        self.gridCollectionView.collectionViewLayout.invalidateLayout()
+        self.carouselCollectionView.reloadData()
+        self.gridCollectionView.reloadData()
     }
 
     func buildMenuTitles()->[String] {
@@ -53,6 +59,15 @@ class FinanceViewController: UIViewController {
     }
 
     func setupCollectionView() {
+
+        if let carouselFlowLayout = self.carouselCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            carouselFlowLayout.estimatedItemSize = CarouselCollectionViewCell.regularSize
+        }
+
+        if let gridFlowLayout = self.gridCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            gridFlowLayout.estimatedItemSize = GridCollectionViewCell.regularSize
+        }
+        
         self.carouselCoordintor.carouselDelegate = self
         self.carouselCoordintor.controllerView = self.view
         self.carouselCoordintor.collectionView = self.carouselCollectionView
@@ -67,14 +82,14 @@ class FinanceViewController: UIViewController {
     func setupCollectionViewPadding() {
         switch (self.traitCollection.horizontalSizeClass) {
         case .compact:
-            theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.compactSize.width, direction: .horizontal)
-            theme.collectionViewPadding(self.gridCollectionView, cellLength: GridCollectionViewCell.compactSize.height, direction: .vertical)
+            theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.compactSize.width, collectionType: .carousel)
+            theme.collectionViewPadding(self.gridCollectionView, cellLength: GridCollectionViewCell.compactSize.width, collectionType: .grid)
         case .regular:
-            theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.regularSize.width, direction: .horizontal)
-            theme.collectionViewPadding(self.gridCollectionView, cellLength: GridCollectionViewCell.regularSize.height, direction: .vertical)
+            theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.regularSize.width, collectionType: .carousel)
+            theme.collectionViewPadding(self.gridCollectionView, cellLength: GridCollectionViewCell.regularSize.width, collectionType: .grid)
         case .unspecified:
-            theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.anySize.width, direction: .horizontal)
-            theme.collectionViewPadding(self.gridCollectionView, cellLength: GridCollectionViewCell.anySize.height, direction: .vertical)
+            theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.anySize.width, collectionType: .carousel)
+            theme.collectionViewPadding(self.gridCollectionView, cellLength: GridCollectionViewCell.anySize.width, collectionType: .grid)
         @unknown default:
             // detect unhandle trait class before getting out to production
             fatalError("support new enum type")

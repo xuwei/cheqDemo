@@ -16,7 +16,7 @@
 		963D62F022FB2231006344C9 /* CarouselCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62EF22FB2230006344C9 /* CarouselCollectionViewCoordinator.swift */; };
 		963D62F222FB225B006344C9 /* GridCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */; };
 		966A19E222FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */; };
-		966A19E622FEA95700A6E444 /* GridCoordinatorVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E522FEA95600A6E444 /* GridCoordinatorVewModel.swift */; };
+		966A19E622FEA95700A6E444 /* GridCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E522FEA95600A6E444 /* GridCoordinatorViewModel.swift */; };
 		966A19E822FEDACC00A6E444 /* DispatchUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E722FEDACC00A6E444 /* DispatchUtil.swift */; };
 		9676521422FAFD01001E43E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676521322FAFD01001E43E0 /* AppDelegate.swift */; };
 		9676521B22FAFD01001E43E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9676521922FAFD01001E43E0 /* Main.storyboard */; };
@@ -68,7 +68,7 @@
 		963D62EF22FB2230006344C9 /* CarouselCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCoordinator.swift; sourceTree = "<group>"; };
 		963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCoordinator.swift; sourceTree = "<group>"; };
 		966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCoordinatorViewModel.swift; sourceTree = "<group>"; };
-		966A19E522FEA95600A6E444 /* GridCoordinatorVewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCoordinatorVewModel.swift; sourceTree = "<group>"; };
+		966A19E522FEA95600A6E444 /* GridCoordinatorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCoordinatorViewModel.swift; sourceTree = "<group>"; };
 		966A19E722FEDACC00A6E444 /* DispatchUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchUtil.swift; sourceTree = "<group>"; };
 		9676521022FAFD01001E43E0 /* CheqDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheqDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9676521322FAFD01001E43E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -386,7 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */,
-				966A19E522FEA95600A6E444 /* GridCoordinatorVewModel.swift */,
+				966A19E522FEA95600A6E444 /* GridCoordinatorViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -598,7 +598,7 @@
 				96A65E7D22FD4B9300F1F7AB /* ColorUtil.swift in Sources */,
 				96B0069522FE70B100173743 /* CPieViewFormatter.swift in Sources */,
 				9676525222FB07A1001E43E0 /* FinanceViewModel.swift in Sources */,
-				966A19E622FEA95700A6E444 /* GridCoordinatorVewModel.swift in Sources */,
+				966A19E622FEA95700A6E444 /* GridCoordinatorViewModel.swift in Sources */,
 				963D62F022FB2231006344C9 /* CarouselCollectionViewCoordinator.swift in Sources */,
 				9676524B22FB06DB001E43E0 /* AppThemeProtocol.swift in Sources */,
 				966A19E822FEDACC00A6E444 /* DispatchUtil.swift in Sources */,

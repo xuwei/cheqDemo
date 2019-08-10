@@ -9,8 +9,8 @@
 import UIKit
 import Hex
 
-enum ScrollDirection {
-    case horizontal, vertical
+enum CollectionViewType {
+    case carousel, grid
 }
 
 // this is an implementation of AppThemeProtocol
@@ -57,12 +57,16 @@ struct PrimaryTheme: AppThemeProtocol {
         return [alternativeColor1, alternativeYellowColor, alternativeYellowColor, alternativeColor2, alternativeColor3, alternativeColor4]
     }
 
-    func collectionViewPadding(_ collectionView: UICollectionView, cellLength: CGFloat, direction: ScrollDirection) {
-        switch(direction) {
-        case .horizontal:
+    func collectionViewPadding(_ collectionView: UICollectionView, cellLength: CGFloat, collectionType: CollectionViewType) {
+        switch(collectionType) {
+
+        // for carousel
+        case .carousel:
             collectionView.contentInset = UIEdgeInsets(top: padding, left: cellLength*0.25, bottom: padding, right: cellLength*0.25)
-        case .vertical:
-            collectionView.contentInset = UIEdgeInsets(top: cellLength*0.25, left: padding*2, bottom: cellLength*0.25, right: padding*2)
+
+        // for grid view
+        case .grid:
+            collectionView.contentInset = UIEdgeInsets(top: padding, left: cellLength*0.25, bottom: padding, right: cellLength*0.25)
         }
     }
 

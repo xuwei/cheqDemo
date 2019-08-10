@@ -36,15 +36,15 @@ class GridCollectionViewCell: UICollectionViewCell {
 extension GridCollectionViewCell: ChartCollectionViewCellProtocol {
     
     static var compactSize: CGSize {
-        return CGSize(width: 100.0, height: 100.0)
+        return CGSize(width: 100.0, height: 84.0)
     }
 
     static var regularSize: CGSize {
-        return CGSize(width: 120.0, height: 120.0)
+        return CGSize(width: 150.0, height: 125.0)
     }
 
     static var anySize: CGSize {
-        return CGSize(width: 150.0, height: 150.0)
+        return CGSize(width: 200.0, height: 167.0)
     }
 
     func setupChart() {
@@ -55,5 +55,17 @@ extension GridCollectionViewCell: ChartCollectionViewCellProtocol {
 
     func animate() {
         self.pie.animate(yAxisDuration: 0.5, easingOption: .easeInOutBounce)
+    }
+}
+
+extension GridCollectionViewCell {
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        setNeedsLayout()
+        layoutIfNeeded()
+        let size = contentView.systemLayoutSizeFitting(layoutAttributes.size)
+        var frame = layoutAttributes.frame
+        frame.size.height = ceil(size.height)
+        layoutAttributes.frame = frame
+        return layoutAttributes
     }
 }

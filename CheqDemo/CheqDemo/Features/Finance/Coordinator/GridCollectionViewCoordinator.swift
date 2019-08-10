@@ -14,9 +14,9 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
     let theme = sharedAppConfig.activeTheme
     var collectionView: UICollectionView?
     var delegate: ChartCollectionViewCoordinatorDelegate?
-    var viewModel: GridCoordinatorVewModel
+    var viewModel: GridCoordinatorViewModel
 
-    init(_ viewModel: GridCoordinatorVewModel) {
+    init(_ viewModel: GridCoordinatorViewModel) {
         self.viewModel = viewModel
         super.init()
     }
@@ -33,6 +33,10 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
         return cell ?? UICollectionViewCell()
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return sharedAppConfig.activeTheme.padding
+    }
+
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
@@ -43,13 +47,18 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if delegate != nil { delegate?.selectedCell(indexPath, collectionView: collectionView) }
     }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: theme.padding, bottom: 0, right: theme.padding)
+    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension GridCollectionViewCoordinator: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        
-//    }
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return GridCollectionViewCell.regularSize
+    }
 }

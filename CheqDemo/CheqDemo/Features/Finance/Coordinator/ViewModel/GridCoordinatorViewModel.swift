@@ -8,13 +8,12 @@
 
 import UIKit
 
-class GridCoordinatorVewModel: NSObject, BaseViewModel {
+class GridCoordinatorViewModel: NSObject, BaseViewModel {
 
     var pieChartModels: [ChartModel] = []
 
     override init() {
         super.init()
-
     }
 
     func load(_ complete: @escaping () -> Void) {
