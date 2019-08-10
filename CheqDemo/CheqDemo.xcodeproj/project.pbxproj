@@ -17,6 +17,7 @@
 		963D62F222FB225B006344C9 /* GridCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */; };
 		966A19E222FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */; };
 		966A19E622FEA95700A6E444 /* GridCoordinatorVewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E522FEA95600A6E444 /* GridCoordinatorVewModel.swift */; };
+		966A19E822FEDACC00A6E444 /* DispatchUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E722FEDACC00A6E444 /* DispatchUtil.swift */; };
 		9676521422FAFD01001E43E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676521322FAFD01001E43E0 /* AppDelegate.swift */; };
 		9676521B22FAFD01001E43E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9676521922FAFD01001E43E0 /* Main.storyboard */; };
 		9676521D22FAFD03001E43E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9676521C22FAFD03001E43E0 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCoordinator.swift; sourceTree = "<group>"; };
 		966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCoordinatorViewModel.swift; sourceTree = "<group>"; };
 		966A19E522FEA95600A6E444 /* GridCoordinatorVewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCoordinatorVewModel.swift; sourceTree = "<group>"; };
+		966A19E722FEDACC00A6E444 /* DispatchUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchUtil.swift; sourceTree = "<group>"; };
 		9676521022FAFD01001E43E0 /* CheqDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheqDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9676521322FAFD01001E43E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9676521A22FAFD01001E43E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				9629A5A222FCCBC400828FCF /* AutoLayoutUtil.swift */,
 				9629A5AC22FD2C6C00828FCF /* ChartModelUtil.swift */,
 				96A65E7C22FD4B9300F1F7AB /* ColorUtil.swift */,
+				966A19E722FEDACC00A6E444 /* DispatchUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 				966A19E622FEA95700A6E444 /* GridCoordinatorVewModel.swift in Sources */,
 				963D62F022FB2231006344C9 /* CarouselCollectionViewCoordinator.swift in Sources */,
 				9676524B22FB06DB001E43E0 /* AppThemeProtocol.swift in Sources */,
+				966A19E822FEDACC00A6E444 /* DispatchUtil.swift in Sources */,
 				9676524522FB064C001E43E0 /* BaseViewModel.swift in Sources */,
 				9676526422FB158B001E43E0 /* GridCollectionViewCell.swift in Sources */,
 				9629A5A322FCCBC400828FCF /* AutoLayoutUtil.swift in Sources */,

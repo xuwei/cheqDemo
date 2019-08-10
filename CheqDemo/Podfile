@@ -10,7 +10,8 @@ target 'CheqDemo' do
   pod 'NavigationDropdownMenu'
   pod 'PromiseKit', '~> 6.8'
   pod 'Hex'
-
+  pod 'SwiftSpinner'
+  
   target 'CheqDemoTests' do
     inherit! :search_paths
     # Pods for testing

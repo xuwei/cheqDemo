@@ -30,20 +30,23 @@ class FinanceViewController: UIViewController {
         self.view.backgroundColor = theme.backgroundColor
         self.title = viewModel.title
         self.menuTitles = self.buildMenuTitles()
-        self.viewModel.load {
-            self.carouselCoordintor = CarouselCollectionViewCoordinator(viewModel.carouselCoordViewModel)
-            self.gridCoordinator = GridCollectionViewCoordinator(viewModel.gridCoordViewModel)
-            self.pageControl.isUserInteractionEnabled = false
-            self.pageControl.numberOfPages = 4
-            setupCollectionView()
-            setupDropdown()
-            self.carouselCollectionView.reloadData()
-            self.gridCollectionView.reloadData()
-        }
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        sharedAppConfig.showSpinner()
+        self.viewModel.load {
+            sharedAppConfig.hideSpinner()
+            self.carouselCoordintor = CarouselCollectionViewCoordinator(self.viewModel.carouselCoordViewModel)
+            self.gridCoordinator = GridCollectionViewCoordinator(self.viewModel.gridCoordViewModel)
+            self.pageControl.isUserInteractionEnabled = false
+            self.pageControl.numberOfPages = 4
+            self.setupCollectionView()
+            self.setupDropdown()
+            self.carouselCollectionView.reloadData()
+            self.gridCollectionView.reloadData()
+        }
     }
 
     func buildMenuTitles()->[String] {

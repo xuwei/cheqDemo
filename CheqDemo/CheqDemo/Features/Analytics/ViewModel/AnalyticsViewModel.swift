@@ -9,7 +9,7 @@
 import UIKit
 
 class AnalyticsViewModel: NSObject, BaseViewModel {
-    func load(_ complete: () -> Void) {
+    func load(_ complete: @escaping () -> Void) {
         complete()
     }
 

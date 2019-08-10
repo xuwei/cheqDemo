@@ -17,7 +17,7 @@ class GridCoordinatorVewModel: NSObject, BaseViewModel {
 
     }
 
-    func load(_ complete: () -> Void) {
+    func load(_ complete: @escaping () -> Void) {
         // load data for grid
         self.pieChartModels = ChartModelUtil.fakePieChartModel()
         complete()

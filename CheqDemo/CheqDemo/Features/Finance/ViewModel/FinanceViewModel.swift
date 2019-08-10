@@ -20,10 +20,12 @@ class FinanceViewModel: NSObject, BaseViewModel {
         self.title = title
     }
 
-    func load(_ complete: () -> Void) {
-        carouselCoordViewModel.load {
-            gridCoordViewModel.load {
-                complete()
+    func load(_ complete: @escaping () -> Void) {
+        DispatchUtil.delay(3.0) {
+            self.carouselCoordViewModel.load {
+                self.gridCoordViewModel.load {
+                    complete()
+                }
             }
         }
     }

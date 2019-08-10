@@ -17,7 +17,7 @@ class CarouselCoordinatorViewModel: NSObject, BaseViewModel {
     }
 
     // load data for carousel
-    func load(_ complete: () -> Void) {
+    func load(_ complete: @escaping () -> Void) {
         self.barChartModels = ChartModelUtil.fakeBarChartModel()
         complete()
     }
