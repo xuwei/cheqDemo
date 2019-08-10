@@ -79,8 +79,27 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$644 " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3F8-6e-jVg">
+                                                    <rect key="frame" x="55" y="22.5" width="40" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="fd3-Bc-1S9"/>
+                                                        <constraint firstAttribute="width" constant="40" id="riu-1O-ldU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="3F8-6e-jVg" firstAttribute="centerY" secondItem="ik0-UR-yFJ" secondAttribute="centerY" id="h17-4L-oJH"/>
+                                            <constraint firstItem="3F8-6e-jVg" firstAttribute="centerX" secondItem="ik0-UR-yFJ" secondAttribute="centerX" id="sJM-Rc-MOk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="title" destination="3F8-6e-jVg" id="066-Iy-um2"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -130,7 +149,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="n8R-lw-JT3"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Analytics" image="ic_star_white" selectedImage="ic_star_white" id="qNj-p0-fbF"/>
+                    <tabBarItem key="tabBarItem" title="Analytics" image="analyticsIcon" selectedImage="analyticsIcon" id="qNj-p0-fbF"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qid-Yg-lSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -147,7 +166,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wQo-MT-5mI"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="cm_share_white" selectedImage="cm_share_white" id="RZl-Xf-hjj"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profileIcon" selectedImage="profileIcon" id="RZl-Xf-hjj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40b-22-ylz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,7 +176,7 @@
         <scene sceneID="fvo-xg-YDU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UIU-wH-MVW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Finance" image="ic_home_white" selectedImage="ic_home_white" id="tmy-ry-C7u"/>
+                    <tabBarItem key="tabBarItem" title="Finance" image="financeIcon" selectedImage="financeIcon" id="tmy-ry-C7u"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MuV-YA-jaA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -174,8 +193,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cm_share_white" width="24" height="24"/>
-        <image name="ic_home_white" width="24" height="24"/>
-        <image name="ic_star_white" width="24" height="24"/>
+        <image name="analyticsIcon" width="30" height="30"/>
+        <image name="financeIcon" width="30" height="30"/>
+        <image name="profileIcon" width="30" height="30"/>
     </resources>
 </document>

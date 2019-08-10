@@ -122,13 +122,17 @@ extension PrimaryTheme {
     }
 
     var linksColor: UIColor {
-        get { return .blue }
+        get { return alternativeColor3 }
     }
 }
 
 extension PrimaryTheme {
     var defaultFont: UIFont {
         get { return UIFont.systemFont(ofSize: 12.0)}
+    }
+
+    var mediumFont: UIFont {
+        get { return UIFont.systemFont(ofSize: 15.0)}
     }
 
     var headerFont: UIFont {

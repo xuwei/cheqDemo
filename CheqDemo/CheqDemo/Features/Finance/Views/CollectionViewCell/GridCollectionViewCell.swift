@@ -13,12 +13,17 @@ class GridCollectionViewCell: UICollectionViewCell {
 
     var pie: PieChartView = PieChartView()
     let theme = PrimaryTheme()
+    @IBOutlet var title: UILabel! 
 
     override func awakeFromNib() {
         super.awakeFromNib()
         self.contentView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.bounds = self.frame
         theme.cardStyling(self, bgColor: theme.textBackgroundColor)
+        self.title.textColor = theme.textColor
+        self.title.font = theme.defaultFont
+        self.title.text = "$644\n21%"
+        self.contentView.bringSubviewToFront(self.title)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -28,16 +33,20 @@ class GridCollectionViewCell: UICollectionViewCell {
             self.pie = view as! PieChartView
             self.pie.rotationWithTwoFingers = false
             self.pie.rotationEnabled = false
+            self.pie.rotationAngle = 0.5
             self.pie.entryLabelFont = theme.defaultFont
             self.pie.entryLabelColor = theme.textColor
+            //self.pie.drawHoleEnabled = true
+            self.pie.drawCenterTextEnabled = false
             self.pie.drawHoleEnabled = true
-            self.pie.drawCenterTextEnabled = true
-            self.pie.legend.verticalAlignment = .center
-            self.pie.legend.horizontalAlignment = .center
-            self.pie.legend.drawInside = true 
-            self.pie.drawMarkers = false
+            self.pie.holeRadiusPercent = 0.7
+            self.pie.legend.enabled = true
+            self.pie.legend.verticalAlignment = .top
+            self.pie.legend.horizontalAlignment = .left
+            self.pie.legend.xOffset = 10.0
+            self.pie.legend.yOffset = 10.0
             self.contentView.addSubview(pie)
-            AutoLayout.pinToSuperview(pie, padding: 10.0)
+            AutoLayout.pinToSuperview(pie, padding: 0.0)
             pie.data = loadData()
         }
     }
@@ -45,18 +54,18 @@ class GridCollectionViewCell: UICollectionViewCell {
     func loadData()-> PieChartData {
 
         var entries: [PieChartDataEntry] = Array()
-        let entry = PieChartDataEntry(value: 0.21, label: "$21")
-        let entry2 = PieChartDataEntry(value: 0.79, label: "")
-        
-
-        entries.append(entry2)
+        let entry = PieChartDataEntry(value: 21, label: "")
+        let entry2 = PieChartDataEntry(value: 79, label: "")
         entries.append(entry)
+        entries.append(entry2)
         let dataSet = PieChartDataSet(entries: entries, label: "Household")
         dataSet.drawIconsEnabled = false
         dataSet.automaticallyDisableSliceSpacing = true
         let data = PieChartData(dataSet: dataSet)
-        dataSet.colors = GradientView.randGradientSet()
-        dataSet.valueTextColor = .clear
+        dataSet.colors = [GradientView.randAlternateColor(), .clear]
+        dataSet.valueColors = [.clear, .clear]
+        dataSet.valueFont = theme.defaultFont
+        dataSet.entryLabelColor = theme.textColor
         return data
     }
 }

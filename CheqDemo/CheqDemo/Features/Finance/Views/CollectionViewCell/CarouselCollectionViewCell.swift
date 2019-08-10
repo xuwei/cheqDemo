@@ -30,7 +30,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
             self.barView.pinchZoomEnabled = false
             self.barView.doubleTapToZoomEnabled = false
             self.contentView.addSubview(barView)
-            AutoLayout.pinToSuperview(self.barView, padding: 10.0)
+            AutoLayout.pinToSuperview(self.barView, padding: 0.0)
             self.barView.data = loadData()
         }
     }
@@ -44,7 +44,8 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         let dataSet = BarChartDataSet(entries: entries, label: "Comm Bank")
         dataSet.setColor(theme.textBackgroundColor.withAlphaComponent(0.5))
         dataSet.highlightColor = theme.textBackgroundColor
-        dataSet.valueTextColor = theme.textBackgroundColor
+        dataSet.valueTextColor = theme.textColor
+        dataSet.valueFont = theme.mediumFont
         let data = BarChartData(dataSet: dataSet)
         return data
     }
@@ -66,6 +67,8 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
 
     func setup(completion: (UIView) -> Void) {
         let chart = BarChartView(frame: self.contentView.frame)
+        chart.extraBottomOffset = 10.0
+        chart.legend.yOffset = 10.0
         chart.rightAxis.enabled = false
         chart.xAxis.enabled = true
         chart.leftAxis.enabled = false
@@ -77,10 +80,8 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
         chart.legend.textColor = theme.textColor
         chart.legend.font = theme.defaultFont
         chart.legend.verticalAlignment = .top
-        chart.xAxis.valueFormatter = ChartFormatter()
+        chart.xAxis.valueFormatter = BarChartFormatter()
         chart.xAxis.labelPosition =  .bottom
-//        chart.xAxis.granularity = 1
-//        chart.xAxis.granularityEnabled = true
         chart.xAxis.labelCount = 4
         completion(chart)
     }

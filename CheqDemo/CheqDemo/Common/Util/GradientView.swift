@@ -9,14 +9,12 @@
 import UIKit
 
 struct GradientView {
-//    static func applyGradientToCell(_ cell: UICollectionViewCell, colors: [UIColor]) {
-//        guard colors.count >= 2 else { return }
-//        let gradientLayer:CAGradientLayer = CAGradientLayer()
-//        gradientLayer.frame.size = cell.frame.size
-//        gradientLayer.colors = colors.map({ $0.cgColor })
-//        //Use diffrent colors
-//        cell.contentView.layer.insertSublayer(gradientLayer, at: 1)
-//    }
+
+    static func randAlternateColor()->UIColor {
+        let theme = PrimaryTheme()
+        let colors = [theme.alternativeColor1, theme.alternativeColor2, theme.alternativeColor3, theme.alternativeColor4]
+        return colors.randomElement() ?? theme.alternativeColor1
+    }
 
     static func randGradientSet()->[UIColor] {
         let theme = PrimaryTheme()

@@ -293,6 +293,7 @@
 		9676524322FB061B001E43E0 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				96A65E8022FDA1A300F1F7AB /* View */,
 				9629A5AE22FD2F9700828FCF /* ViewModel */,
 				9629A59F22FCC73C00828FCF /* Util */,
 				9676524922FB06C0001E43E0 /* Theme */,
@@ -328,6 +329,21 @@
 				9676525C22FB0856001E43E0 /* FinanceService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		96A65E8022FDA1A300F1F7AB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96A65E8122FDA1AE00F1F7AB /* Chart */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96A65E8122FDA1AE00F1F7AB /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

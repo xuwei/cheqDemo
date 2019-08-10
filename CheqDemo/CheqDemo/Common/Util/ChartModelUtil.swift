@@ -17,12 +17,19 @@ struct ChartModelUtil {
 }
 
 @objc(BarChartFormatter)
-class ChartFormatter:NSObject,IAxisValueFormatter{
+class BarChartFormatter:NSObject,IAxisValueFormatter{
 
     var months: [String]! = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return months[Int(value)]
+    }
+}
+
+@objc(PieChartFormatter)
+class PieChartFormatter:NSObject,IValueFormatter{
+    func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
+        return String("\(value)%%")
     }
 }
 

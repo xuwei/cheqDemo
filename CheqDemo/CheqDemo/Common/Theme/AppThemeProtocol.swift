@@ -10,9 +10,10 @@ import UIKit
 
 protocol AppThemeProtocol {
     var defaultFont: UIFont { get }
+    var mediumFont: UIFont { get }
+    var headerFont: UIFont { get }
     var textColor: UIColor { get }
     var linksColor: UIColor { get }
-    var headerFont: UIFont { get }
     var primaryColor: UIColor { get }
     var backgroundColor: UIColor { get }
     var textBackgroundColor: UIColor { get }
