@@ -14,6 +14,6 @@ protocol ChartCollectionViewCellProtocol {
     static var regularSize: CGSize { get }
     static var anySize: CGSize { get }
 
-    func setup(completion: (UIView)->Void)
+    func setupChart()
     func animate()
 }

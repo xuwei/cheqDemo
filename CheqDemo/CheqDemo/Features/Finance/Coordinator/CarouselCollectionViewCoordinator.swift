@@ -13,7 +13,8 @@ protocol CarouselCollectionViewCoordinatorDelegate {
     func updatePaginControl(_ index: Int)
 }
 
-class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
+// MARK: UICollectionViewDelegate, UICollectionViewDataSource
+class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource  {
 
     let theme = sharedAppConfig.activeTheme
     var controllerView: UIView?
@@ -43,6 +44,7 @@ class CarouselCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIC
     }
 }
 
+// MARK: UIScrollViewDelegate
 extension CarouselCollectionViewCoordinator: UIScrollViewDelegate {
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -70,6 +72,15 @@ extension CarouselCollectionViewCoordinator: UIScrollViewDelegate {
         let indexPath = collectionView.indexPathForItem(at: view.convert(center, to: collectionView)) ?? nil
         return indexPath
     }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension CarouselCollectionViewCoordinator {
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//    }
 }
 
 

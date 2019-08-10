@@ -28,13 +28,7 @@ class GridCollectionViewCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = .orange
-        self.setup { view in
-            self.pie = view as! CPieChartView
-            self.contentView.addSubview(pie)
-            AutoLayoutUtil.pinToSuperview(pie, padding: 0.0)
-            pie.data = loadData()
-        }
+        self.setupChart()
     }
 
     func loadData()-> PieChartData {
@@ -71,9 +65,11 @@ extension GridCollectionViewCell: ChartCollectionViewCellProtocol {
         return CGSize(width: 150.0, height: 150.0)
     }
 
-    func setup(completion: (UIView) -> Void) {
-        let chart = CPieChartView(frame: self.contentView.frame)
-        completion(chart)
+    func setupChart() {
+        self.pie = CPieChartView(frame: self.contentView.frame)
+        self.contentView.addSubview(pie)
+        AutoLayoutUtil.pinToSuperview(pie, padding: 0.0)
+        pie.data = loadData()
     }
 
     func animate() {

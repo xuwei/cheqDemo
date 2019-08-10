@@ -26,6 +26,7 @@ protocol AppThemeProtocol {
     var alternativeColor2: UIColor { get }
     var alternativeColor3: UIColor { get }
     var alternativeColor4: UIColor { get }
+    var nonActiveAlpha: CGFloat { get }
 
     //MARK: gradients
     var gradientBlueSet: [UIColor] { get }

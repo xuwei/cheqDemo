@@ -23,14 +23,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.backgroundColor = .purple
-        setup { [weak self] view in
-            guard let self = self else { return }
-            self.barView = view as! CBarChartView
-            self.contentView.addSubview(barView)
-            AutoLayoutUtil.pinToSuperview(self.barView, padding: 0.0)
-            self.barView.data = loadData()
-        }
+        setupChart()
     }
 
     func loadData()-> BarChartData {
@@ -64,13 +57,15 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
         return CGSize(width: 400.0, height: 300.0)
     }
 
-    func setup(completion: (UIView) -> Void) {
-        let chart = CBarChartView(frame: self.contentView.frame)
-        chart.xAxis.labelCount = 4
-        completion(chart)
+    func setupChart() {
+        self.barView = CBarChartView(frame: self.contentView.frame)
+        self.barView.xAxis.labelCount = 4
+        self.contentView.addSubview(barView)
+        AutoLayoutUtil.pinToSuperview(self.barView, padding: 0.0)
+        self.barView.data = loadData()
     }
 
     func animate() {
-        self.barView.animate(yAxisDuration: 0.5, easingOption: .easeInOutBounce)
+        self.barView.animate(yAxisDuration: theme.mediumAnimationDuration, easingOption: .easeInOutBounce)
     }
 }

@@ -8,27 +8,10 @@
 
 import UIKit
 
-enum FinancialPeriod {
-    case month
-    case quarterly
-    case annually
-
-    var string: String {
-        switch self {
-        case .month: return "Monthly"
-        case .quarterly: return "Quarterly"
-        case .annually: return "Annually"
-        }
-    }
-
-    static let allValues = [month, quarterly, annually]
-    static let allStringValues = [month.string, quarterly.string, annually.string]
-}
-
 class FinanceViewModel: BaseViewModel {
 
     let title: String
-    let filters = FinancialPeriod.allValues
+    let filters = FinancialPeriod.AllCases()
     var barChartModels: [ChartModel] = []
     var pieChartModels: [ChartModel] = []
 

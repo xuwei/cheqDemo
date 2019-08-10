@@ -141,6 +141,7 @@
 		9629A58C22FC302000828FCF /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				96B0069C22FEA56700173743 /* New Group */,
 				9676526122FB156E001E43E0 /* CarouselCollectionViewCell.swift */,
 				9676526322FB158B001E43E0 /* GridCollectionViewCell.swift */,
 			);
@@ -372,6 +373,13 @@
 				96B0069722FE72A700173743 /* CommonEnums.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		96B0069C22FEA56700173743 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

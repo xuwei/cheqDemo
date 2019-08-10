@@ -11,7 +11,7 @@ import Charts
 
 @objc(BarChartFormatter)
 class CBarChartFormatter:NSObject,IAxisValueFormatter{
-    var months = AllMonths.map{ "\($0)" }
+    var months = Month.allStringValues
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         return months[Int(value)]
     }

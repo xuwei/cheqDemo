@@ -17,8 +17,6 @@ class FinanceViewController: UIViewController {
     @IBOutlet var gridCollectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
 
-
-
     let carouselCoordintor = CarouselCollectionViewCoordinator()
     let gridCoordinator = GridCollectionViewCoordinator()
     let theme = sharedAppConfig.activeTheme
@@ -44,11 +42,7 @@ class FinanceViewController: UIViewController {
     }
 
     func buildMenuTitles()->[String] {
-        var entries = [String]()
-        for period in FinancialPeriod.allStringValues {
-            entries.append(String("\(period) Expenses"))
-        }
-        return entries
+        return FinancialPeriod.allStringValues.map{ String("\($0) Expenses") }
     }
 
     func setupCollectionView() {

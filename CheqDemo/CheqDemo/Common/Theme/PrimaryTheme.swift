@@ -133,6 +133,8 @@ extension PrimaryTheme {
     var linksColor: UIColor {
         get { return alternativeColor3 }
     }
+
+    var nonActiveAlpha: CGFloat { get { return 0.5 } }
 }
 
 //MARK: fonts

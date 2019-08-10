@@ -8,9 +8,8 @@
 
 import UIKit
 
-
-
-class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource  {
+// MARK: UICollectionViewDelegate, UICollectionViewDataSource
+class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UICollectionViewDataSource {
 
     let theme = sharedAppConfig.activeTheme
     var collectionView: UICollectionView?
@@ -36,4 +35,13 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if delegate != nil { delegate?.selectedCell(indexPath, collectionView: collectionView) }
     }
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+extension GridCollectionViewCoordinator: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//    }
 }
