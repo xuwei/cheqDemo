@@ -82,19 +82,15 @@ extension CarouselCollectionViewCoordinator: UIScrollViewDelegate {
         let indexPath = collectionView.indexPathForItem(at: view.convert(center, to: collectionView)) ?? nil
         return indexPath
     }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: theme.padding, bottom: 0, right: theme.padding)
-    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
-extension CarouselCollectionViewCoordinator {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CarouselCollectionViewCell.regularSize
-    }
-}
+//extension CarouselCollectionViewCoordinator {
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CarouselCollectionViewCell.compactSize
+//    }
+//}
 
 

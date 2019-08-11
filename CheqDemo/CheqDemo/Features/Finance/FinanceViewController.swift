@@ -61,11 +61,13 @@ class FinanceViewController: UIViewController {
     func setupCollectionView() {
 
         if let carouselFlowLayout = self.carouselCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            carouselFlowLayout.estimatedItemSize = CarouselCollectionViewCell.regularSize
+            carouselFlowLayout.estimatedItemSize = CarouselCollectionViewCell.suitableSize(self.traitCollection)
+            self.carouselCollectionView.collectionViewLayout = carouselFlowLayout
         }
 
         if let gridFlowLayout = self.gridCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            gridFlowLayout.estimatedItemSize = GridCollectionViewCell.regularSize
+            gridFlowLayout.estimatedItemSize = GridCollectionViewCell.suitableSize(self.traitCollection)
+            self.gridCollectionView.collectionViewLayout = gridFlowLayout
         }
         
         self.carouselCoordintor.carouselDelegate = self
@@ -80,20 +82,10 @@ class FinanceViewController: UIViewController {
     }
 
     func setupCollectionViewPadding() {
-        switch (self.traitCollection.horizontalSizeClass) {
-        case .compact:
-            theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.compactSize.width, collectionType: .carousel)
-            theme.collectionViewPadding(self.gridCollectionView, cellLength: GridCollectionViewCell.compactSize.width, collectionType: .grid)
-        case .regular:
-            theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.regularSize.width, collectionType: .carousel)
-            theme.collectionViewPadding(self.gridCollectionView, cellLength: GridCollectionViewCell.regularSize.width, collectionType: .grid)
-        case .unspecified:
-            theme.collectionViewPadding(self.carouselCollectionView, cellLength:  CarouselCollectionViewCell.anySize.width, collectionType: .carousel)
-            theme.collectionViewPadding(self.gridCollectionView, cellLength: GridCollectionViewCell.anySize.width, collectionType: .grid)
-        @unknown default:
-            // detect unhandle trait class before getting out to production
-            fatalError("support new enum type")
-        }
+        let carouselCellSize = CarouselCollectionViewCell.suitableSize(self.traitCollection)
+        let gridCellSize = GridCollectionViewCell.suitableSize(self.traitCollection)
+        theme.collectionViewPadding(self.carouselCollectionView, cellLength: carouselCellSize.width, collectionType: .carousel)
+        theme.collectionViewPadding(self.gridCollectionView, cellLength: gridCellSize.width, collectionType: .grid)
     }
 
     func setupDropdown() {

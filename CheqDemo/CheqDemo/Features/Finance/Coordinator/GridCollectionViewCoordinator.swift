@@ -30,6 +30,8 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? GridCollectionViewCell
         let chartModel = viewModel.pieChartModels[indexPath.row]
         cell?.pie.loadData(chartModel)
+        let amount = chartModel.dataSet["amount"] as! String
+        cell?.title.text = "\(amount)"
         return cell ?? UICollectionViewCell()
     }
 
@@ -54,11 +56,11 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
-extension GridCollectionViewCoordinator: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        return GridCollectionViewCell.regularSize
-    }
-}
+//extension GridCollectionViewCoordinator: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView,
+//                        layout collectionViewLayout: UICollectionViewLayout,
+//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        return GridCollectionViewCell.suitableSize(collectionView.traitCollection)
+//    }
+//}

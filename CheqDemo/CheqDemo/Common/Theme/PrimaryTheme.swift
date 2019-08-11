@@ -16,8 +16,12 @@ enum CollectionViewType {
 // this is an implementation of AppThemeProtocol
 // we can create more for different themes. e.g. DarkModeTheme, CBATheme, etc
 
-//MARK: styling logics
+//MARK: collection styling logics
 struct PrimaryTheme: AppThemeProtocol {
+
+    var gridCellToScreenRatio: CGFloat { get { return 0.35 } }
+    var carouselCellWidthToScreenRatio: CGFloat { get { return 0.6 } }
+    var carouselCellHeightToScreenRatio: CGFloat { get { return 0.25 } }
 
     func cardStyling(_ view: UIView, bgColor: UIColor) {
         view.backgroundColor = bgColor
@@ -33,7 +37,7 @@ struct PrimaryTheme: AppThemeProtocol {
     }
 
     func cardStyling(_ view: UIView, bgColors: [UIColor]) {
-        view.backgroundColor = .clear
+        // setup gradient layer
         let gradientLayer = CAGradientLayer()
         gradientLayer.masksToBounds = false
         gradientLayer.frame = view.layer.bounds
@@ -49,8 +53,7 @@ struct PrimaryTheme: AppThemeProtocol {
         gradientLayer.shadowOpacity = 0.2
         gradientLayer.shadowOffset = CGSize(width: 5, height: 5)
         gradientLayer.shadowRadius = gradientLayer.cornerRadius / 2.0
-        view.layer.masksToBounds = false
-        view.layer.insertSublayer(gradientLayer, at: 0);
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
     func allBgColors()-> [UIColor] {

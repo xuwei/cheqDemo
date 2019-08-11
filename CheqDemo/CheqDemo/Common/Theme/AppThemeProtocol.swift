@@ -41,6 +41,10 @@ protocol AppThemeProtocol {
 
     //MARK: styling logics
     var padding: CGFloat { get }
+    var gridCellToScreenRatio: CGFloat { get }
+    var carouselCellWidthToScreenRatio: CGFloat { get }
+    var carouselCellHeightToScreenRatio: CGFloat { get }
+
     func cardStyling(_ view: UIView, bgColors: [UIColor])
     func cardStyling(_ view: UIView, bgColor: UIColor)
     func collectionViewPadding(_ collectionView: UICollectionView, cellLength: CGFloat, collectionType: CollectionViewType)

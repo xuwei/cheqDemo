@@ -17,18 +17,29 @@ class GridCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.bounds = self.frame
-        theme.cardStyling(self, bgColor: theme.textBackgroundColor)
+        self.backgroundColor = .clear
+        self.layer.masksToBounds = false
+        self.setupChart()
         self.title.textColor = theme.textColor
         self.title.font = theme.defaultFont
-        self.title.text = "$644\n21%"
         self.contentView.bringSubviewToFront(self.title)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.setupChart()
+
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        // add gradient once here, it is too early on awakeFromNib
+        if !(self.contentView.layer.sublayers?.first is CAGradientLayer) {
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            theme.cardStyling(self.contentView, bgColor: theme.textBackgroundColor)
+            CATransaction.commit()
+        }
     }
 }
 
@@ -36,15 +47,16 @@ class GridCollectionViewCell: UICollectionViewCell {
 extension GridCollectionViewCell: ChartCollectionViewCellProtocol {
     
     static var compactSize: CGSize {
-        return CGSize(width: 100.0, height: 84.0)
+        let theme = sharedAppConfig.activeTheme
+        return CGSize(width: UIScreen.main.bounds.width * theme.gridCellToScreenRatio, height: UIScreen.main.bounds.width * theme.gridCellToScreenRatio)
     }
 
     static var regularSize: CGSize {
-        return CGSize(width: 150.0, height: 125.0)
+        return compactSize
     }
 
     static var anySize: CGSize {
-        return CGSize(width: 200.0, height: 167.0)
+        return compactSize
     }
 
     func setupChart() {
@@ -54,7 +66,7 @@ extension GridCollectionViewCell: ChartCollectionViewCellProtocol {
     }
 
     func animate() {
-        self.pie.animate(yAxisDuration: 0.5, easingOption: .easeInOutBounce)
+        self.pie.animate(yAxisDuration: sharedAppConfig.activeTheme.mediumAnimationDuration, easingOption: .easeInOutBounce)
     }
 }
 

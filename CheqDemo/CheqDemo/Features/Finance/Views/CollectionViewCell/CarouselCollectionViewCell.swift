@@ -16,30 +16,46 @@ class CarouselCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.contentView.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.bounds = self.frame
-        theme.cardStyling(self, bgColors: ColorUtil.randGradientSet())
+        self.backgroundColor = .clear
+        self.layer.masksToBounds = false
+        setupChart()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupChart()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        // add gradient once here, it is too early on awakeFromNib
+        if !(self.contentView.layer.sublayers?.first is CAGradientLayer) {
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            theme.cardStyling(self.contentView, bgColors: ColorUtil.randGradientSet())
+            CATransaction.commit()
+        }
     }
 }
 
 // MARK: ChartCollectionViewCellProtocol
 extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
 
+    // placeholder for compact trait size customisation
     static var compactSize: CGSize {
-        return CGSize(width: 200.0, height: 150.0)
+        let theme = sharedAppConfig.activeTheme
+        return CGSize(width: UIScreen.main.bounds.width * theme.carouselCellWidthToScreenRatio , height: UIScreen.main.bounds.height * theme.carouselCellHeightToScreenRatio)
     }
 
+    // placeholder for "regular" trait size customisation
+    // leave the setting
     static var regularSize: CGSize {
-        return CGSize(width: 300.0, height: 200.0)
+        return compactSize
     }
 
+    // placeholder for "any" trait size customisation
     static var anySize: CGSize {
-        return CGSize(width: 400.0, height: 300.0)
+        return compactSize
     }
 
     func setupChart() {

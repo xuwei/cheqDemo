@@ -16,4 +16,20 @@ protocol ChartCollectionViewCellProtocol {
 
     func setupChart()
     func animate()
+    static func suitableSize(_ traitCollection: UITraitCollection)-> CGSize
+}
+
+extension ChartCollectionViewCellProtocol {
+    static func suitableSize(_ traitCollection: UITraitCollection)-> CGSize {
+        switch (traitCollection.horizontalSizeClass) {
+        case .compact:
+            return compactSize
+        case .regular:
+            return regularSize
+        case .unspecified:
+            return anySize
+        default:
+            return regularSize
+        }
+    }
 }
