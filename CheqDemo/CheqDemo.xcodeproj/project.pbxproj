@@ -44,7 +44,7 @@
 		96B0069322FE709A00173743 /* CBarViewFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0069222FE709A00173743 /* CBarViewFormatter.swift */; };
 		96B0069522FE70B100173743 /* CPieViewFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0069422FE70B100173743 /* CPieViewFormatter.swift */; };
 		96B0069822FE72A700173743 /* CommonEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0069722FE72A700173743 /* CommonEnums.swift */; };
-		96B0069A22FE7CF700173743 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0069922FE7CF700173743 /* ChartModel.swift */; };
+		96B0069A22FE7CF700173743 /* CChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0069922FE7CF700173743 /* CChartModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +101,7 @@
 		96B0069222FE709A00173743 /* CBarViewFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBarViewFormatter.swift; sourceTree = "<group>"; };
 		96B0069422FE70B100173743 /* CPieViewFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CPieViewFormatter.swift; sourceTree = "<group>"; };
 		96B0069722FE72A700173743 /* CommonEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonEnums.swift; sourceTree = "<group>"; };
-		96B0069922FE7CF700173743 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
+		96B0069922FE7CF700173743 /* CChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CChartModel.swift; sourceTree = "<group>"; };
 		C33A3CE4B21EA317051137B7 /* Pods_CheqDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CheqDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C798FA601387B795C7DCC2CB /* Pods-CheqDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CheqDemoTests.release.xcconfig"; path = "Target Support Files/Pods-CheqDemoTests/Pods-CheqDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -355,7 +355,7 @@
 				96B0068B22FE6A9E00173743 /* CBarChartView.swift */,
 				96B0068D22FE6ABF00173743 /* CPieChartView.swift */,
 				96B0068F22FE6D0A00173743 /* CChartViewProtocol.swift */,
-				96B0069922FE7CF700173743 /* ChartModel.swift */,
+				96B0069922FE7CF700173743 /* CChartModel.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -590,7 +590,7 @@
 				9676526222FB156E001E43E0 /* CarouselCollectionViewCell.swift in Sources */,
 				963D62EE22FB1DE0006344C9 /* CollectionViewProtocol.swift in Sources */,
 				9676524222FB060E001E43E0 /* FinanceViewController.swift in Sources */,
-				96B0069A22FE7CF700173743 /* ChartModel.swift in Sources */,
+				96B0069A22FE7CF700173743 /* CChartModel.swift in Sources */,
 				9676525622FB07E5001E43E0 /* AnalyticsViewModel.swift in Sources */,
 				9676526022FB0946001E43E0 /* TabViewController.swift in Sources */,
 				9676521422FAFD01001E43E0 /* AppDelegate.swift in Sources */,

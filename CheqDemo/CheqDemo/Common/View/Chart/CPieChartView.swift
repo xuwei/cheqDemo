@@ -18,10 +18,7 @@ class CPieChartView: PieChartView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupConfig()
     }
-
-
 }
 
 // MARK: CChartViewProtocol
@@ -45,7 +42,7 @@ extension CPieChartView: CChartViewProtocol {
         self.legend.textColor = sharedAppConfig.activeTheme.textColor
     }
 
-    func loadData(_ chartModel: ChartModel) {
+    func loadData(_ chartModel: CChartModel) {
         guard chartModel.type == .pie else { return }
 
         // extract information from chartModel

@@ -19,6 +19,10 @@ class GridCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = .clear
         self.layer.masksToBounds = false
         self.setupChart()
+        self.setupTitleText()
+    }
+
+    func setupTitleText() {
         self.title.textColor = sharedAppConfig.activeTheme.textColor
         self.title.font = sharedAppConfig.activeTheme.defaultFont
         self.contentView.bringSubviewToFront(self.title)

@@ -18,7 +18,6 @@ class CBarChartView: BarChartView {
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupConfig()
     }
 }
 
@@ -44,7 +43,7 @@ extension CBarChartView: CChartViewProtocol {
         self.doubleTapToZoomEnabled = false
     }
 
-    func loadData(_ chartModel: ChartModel) {
+    func loadData(_ chartModel: CChartModel) {
         guard chartModel.type == .bar else { return }
         let entries: [ChartDataEntry] = chartModel.dataSet.map { (arg: (key: String, value: Any)) -> ChartDataEntry in
             let (key, value) = arg

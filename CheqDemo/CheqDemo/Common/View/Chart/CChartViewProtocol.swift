@@ -10,5 +10,5 @@ import UIKit
 
 protocol CChartViewProtocol {
     func setupConfig()
-    func loadData(_ chartModel: ChartModel)
+    func loadData(_ chartModel: CChartModel)
 }

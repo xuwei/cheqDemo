@@ -8,13 +8,13 @@
 
 import UIKit
 
-enum ChartType: Int {
+enum CChartType: Int {
     case bar = 1
     case pie = 2
 }
 
-struct ChartModel {
+struct CChartModel {
     let title: String 
-    let type: ChartType
+    let type: CChartType
     let dataSet: [String: Any]
 }

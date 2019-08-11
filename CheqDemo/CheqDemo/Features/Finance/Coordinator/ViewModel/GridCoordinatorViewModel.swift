@@ -10,7 +10,7 @@ import UIKit
 
 class GridCoordinatorViewModel: NSObject, BaseViewModel {
 
-    var pieChartModels: [ChartModel] = []
+    var pieChartModels: [CChartModel] = []
 
     override init() {
         super.init()

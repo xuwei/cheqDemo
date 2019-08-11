@@ -10,7 +10,7 @@ import UIKit
 
 class CarouselCoordinatorViewModel: NSObject, BaseViewModel {
 
-    var barChartModels: [ChartModel] = []
+    var barChartModels: [CChartModel] = []
 
     override init() {
         super.init()

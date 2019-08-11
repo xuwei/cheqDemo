@@ -11,6 +11,7 @@ import Charts
 
 class CarouselCollectionViewCell: UICollectionViewCell {
 
+    var currentTheme = sharedAppConfig.activeTheme
     var barView = CBarChartView()
 
     override func awakeFromNib() {
@@ -26,14 +27,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
-        // add gradient once here, it is too early on awakeFromNib
-        if !(self.contentView.layer.sublayers?.first is CAGradientLayer) {
-            CATransaction.begin()
-            CATransaction.setDisableActions(true)
-            sharedAppConfig.activeTheme.cardStyling(self.contentView, bgColors: ColorUtil.randGradientSet())
-            CATransaction.commit()
-        }
+        setupGradientIfNeeded()
     }
 }
 
@@ -61,6 +55,38 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
         self.barView = CBarChartView(frame: self.contentView.frame)
         self.contentView.addSubview(barView)
         AutoLayoutUtil.pinToSuperview(self.barView, padding: 0.0)
+    }
+
+    fileprivate func refreshGradientColor() {
+        if gradientLayerExist() {
+            let gradLayer: CAGradientLayer = self.contentView.layer.sublayers?.first as! CAGradientLayer
+            gradLayer.colors = ColorUtil.randGradientSet().map({ $0.cgColor })
+        }
+    }
+
+    func refreshIfThemeUpdated() {
+        if currentTheme.themeTitle != sharedAppConfig.activeTheme.themeTitle {
+            self.currentTheme = sharedAppConfig.activeTheme
+            self.refreshGradientColor()
+        }
+    }
+
+    fileprivate func gradientLayerExist()-> Bool {
+        let bottomLayer = self.contentView.layer.sublayers?.first
+        return bottomLayer is CAGradientLayer
+    }
+
+    fileprivate func setupGradientIfNeeded() {
+        if !gradientLayerExist() {
+            addNewGradient()
+        }
+    }
+
+    fileprivate func addNewGradient() {
+        CATransaction.begin()
+        CATransaction.setDisableActions(true)
+        sharedAppConfig.activeTheme.cardStyling(self.contentView, bgColors: ColorUtil.randGradientSet())
+        CATransaction.commit()
     }
 
     func animate() {
