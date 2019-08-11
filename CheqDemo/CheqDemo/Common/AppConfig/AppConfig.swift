@@ -13,8 +13,8 @@ let sharedAppConfig = AppConfig()
 
 // manages the app global variables
 class AppConfig {
-    var themeTitles = [PrimaryTheme().themeTitle, DarkTheme().themeTitle]
-    var themes:[AppThemeProtocol] = [PrimaryTheme(), DarkTheme()]
+    var themeTitles = [PrimaryTheme().themeTitle, DarkTheme().themeTitle, CBATheme().themeTitle]
+    var themes:[AppThemeProtocol] = [PrimaryTheme(), DarkTheme(), CBATheme()]
     var activeTheme: AppThemeProtocol = PrimaryTheme()
     var currentActiveThemeIndex = 0
 
