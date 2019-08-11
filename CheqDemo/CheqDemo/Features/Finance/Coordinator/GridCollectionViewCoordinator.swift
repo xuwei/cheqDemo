@@ -32,6 +32,7 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
         cell?.pie.loadData(chartModel)
         let amount = chartModel.dataSet["amount"] as! String
         cell?.title.text = "\(amount)"
+        cell?.title.textColor = sharedAppConfig.activeTheme.textColor
         return cell ?? UICollectionViewCell()
     }
 
@@ -54,13 +55,3 @@ class GridCollectionViewCoordinator: NSObject, UICollectionViewDelegate, UIColle
         return UIEdgeInsets(top: 0, left: theme.padding, bottom: 0, right: theme.padding)
     }
 }
-
-// MARK: UICollectionViewDelegateFlowLayout
-//extension GridCollectionViewCoordinator: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        return GridCollectionViewCell.suitableSize(collectionView.traitCollection)
-//    }
-//}

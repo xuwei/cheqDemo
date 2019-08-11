@@ -1,36 +1,23 @@
 //
-//  PrimaryTheme.swift
+//  CBATheme.swift
 //  CheqDemo
 //
-//  Created by XUWEI LIANG on 8/8/19.
+//  Created by XUWEI LIANG on 11/8/19.
 //  Copyright © 2019 WiseTree Solutions Pty Ltd. All rights reserved.
 //
 
 import UIKit
-import Hex
 
-enum CollectionViewType {
-    case carousel, grid
-}
-
-// this is an implementation of AppThemeProtocol
-// we can create more for different themes. e.g. DarkModeTheme, CBATheme, etc
-
-//MARK: collection styling
-struct PrimaryTheme: AppThemeProtocol {
+struct DarkTheme: AppThemeProtocol {
     var gridCellToScreenRatio: CGFloat { get { return 0.35 } }
     var carouselCellWidthToScreenRatio: CGFloat { get { return 0.6 } }
     var carouselCellHeightToScreenRatio: CGFloat { get { return 0.25 } }
-
-    func allBgColors()-> [UIColor] {
-        return [alternativeColor1, alternativeColor2, alternativeColor3, alternativeColor4, alternativeOrangeColor, alternativeYellowColor]
-    }
 }
 
 //MARK: colors
-extension PrimaryTheme {
+extension DarkTheme {
     var gradientSet1: [UIColor] {
-    get {
+        get {
             return [alternativeColor1, alternativeColor2]
         }
     }
@@ -47,23 +34,23 @@ extension PrimaryTheme {
     }
 
     var primaryColor: UIColor {
-        get { return UIColor(hex: "0D80FF") }
+        get { return UIColor(hex: "FFFFFF") }
     }
 
     var alternativeColor1: UIColor {
-        get { return UIColor(hex: "0CAEE8") }
+        get { return UIColor(hex: "64E1F5") }
     }
 
     var alternativeColor2: UIColor {
-        get { return UIColor(hex: "01FFFD") }
+        get { return UIColor(hex: "6BFF9F") }
     }
 
     var alternativeColor3: UIColor {
-        get { return UIColor(hex: "5FE8B1") }
+        get { return UIColor(hex: "7888FF") }
     }
 
     var alternativeColor4: UIColor {
-        get { return UIColor(hex: "55FAFF") }
+        get { return UIColor(hex: "CA7BF4") }
     }
 
     var alternativeOrangeColor: UIColor {
@@ -75,15 +62,15 @@ extension PrimaryTheme {
     }
 
     var backgroundColor: UIColor {
-        get { return UIColor(hex: "FFFFFF") }
+        get { return UIColor(hex: "000000") }
     }
 
     var textBackgroundColor: UIColor {
-        get { return UIColor(hex: "FFFFFF")}
+        get { return UIColor(hex: "000000")}
     }
 
     var textColor: UIColor {
-        get { return .black }
+        get { return .white }
     }
 
     var linksColor: UIColor {
@@ -92,11 +79,11 @@ extension PrimaryTheme {
 
     var nonActiveAlpha: CGFloat { get { return 0.5 } }
 
-    var barStyle: UIBarStyle { get { return .default } }
+    var barStyle: UIBarStyle { get { return .black } }
 }
 
 //MARK: fonts
-extension PrimaryTheme {
+extension DarkTheme {
     var defaultFont: UIFont {
         get { return UIFont.systemFont(ofSize: 12.0)}
     }
@@ -111,7 +98,7 @@ extension PrimaryTheme {
 }
 
 //MARK: animation variables
-extension PrimaryTheme {
+extension DarkTheme {
     var longAnimationDuration: TimeInterval { return 1.0 }
     var mediumAnimationDuration: TimeInterval { return 0.5 }
     var quickAnimationDuration: TimeInterval { return 0.25}

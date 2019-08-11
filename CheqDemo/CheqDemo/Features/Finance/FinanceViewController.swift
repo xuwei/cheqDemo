@@ -20,20 +20,19 @@ class FinanceViewController: UIViewController {
     //placeholder to avoid optional, since we definitely know we will get them after viewModel loaded
     var carouselCoordintor = CarouselCollectionViewCoordinator(CarouselCoordinatorViewModel())
     var gridCoordinator = GridCollectionViewCoordinator(GridCoordinatorViewModel())
-    let theme = sharedAppConfig.activeTheme
 
     var menuView: NavigationDropdownMenu?
     var menuTitles = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = theme.backgroundColor
         self.title = viewModel.title
         self.menuTitles = self.buildMenuTitles()
         self.carouselCoordintor = CarouselCollectionViewCoordinator(self.viewModel.carouselCoordViewModel)
         self.gridCoordinator = GridCollectionViewCoordinator(self.viewModel.gridCoordViewModel)
         self.pageControl.isUserInteractionEnabled = false
         self.setupCollectionView()
+        self.menuView = NavigationDropdownMenu(title: Title.index(0), items: self.menuTitles)
         self.setupDropdown()
         self.loadData { self.reloadUI() }
     }
@@ -43,6 +42,9 @@ class FinanceViewController: UIViewController {
     }
 
     func reloadUI() {
+        self.navigationController?.navigationBar.barStyle = sharedAppConfig.activeTheme.barStyle
+        self.tabBarController?.tabBar.barStyle = sharedAppConfig.activeTheme.barStyle
+        self.view.backgroundColor = sharedAppConfig.activeTheme.backgroundColor
         self.carouselCollectionView.collectionViewLayout.invalidateLayout()
         self.gridCollectionView.collectionViewLayout.invalidateLayout()
         self.carouselCollectionView.reloadData()
@@ -79,16 +81,19 @@ class FinanceViewController: UIViewController {
     func setupCollectionViewPadding() {
         let carouselCellSize = CarouselCollectionViewCell.suitableSize(self.traitCollection)
         let gridCellSize = GridCollectionViewCell.suitableSize(self.traitCollection)
-        theme.collectionViewPadding(self.carouselCollectionView, cellLength: carouselCellSize.width, collectionType: .carousel)
-        theme.collectionViewPadding(self.gridCollectionView, cellLength: gridCellSize.width, collectionType: .grid)
+        sharedAppConfig.activeTheme.collectionViewPadding(self.carouselCollectionView, cellLength: carouselCellSize.width, collectionType: .carousel)
+        sharedAppConfig.activeTheme.collectionViewPadding(self.gridCollectionView, cellLength: gridCellSize.width, collectionType: .grid)
     }
 
     func setupDropdown() {
-        self.menuView = NavigationDropdownMenu(title: Title.index(0), items: self.menuTitles)
         guard let menuView = menuView else { return }
-        menuView.arrowTintColor = theme.linksColor
-        menuView.navigationBarTitleFont = theme.headerFont
-        menuView.cellTextLabelFont = theme.defaultFont
+        menuView.arrowTintColor = sharedAppConfig.activeTheme.linksColor
+        menuView.navigationBarTitleFont = sharedAppConfig.activeTheme.mediumFont
+        menuView.cellTextLabelColor = sharedAppConfig.activeTheme.textColor
+        menuView.cellTextLabelFont = sharedAppConfig.activeTheme.defaultFont
+        menuView.menuTitleColor = sharedAppConfig.activeTheme.textColor
+        menuView.cellBackgroundColor = sharedAppConfig.activeTheme.backgroundColor
+        menuView.cellSeparatorColor = sharedAppConfig.activeTheme.textColor
         self.navigationItem.titleView = menuView
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
             self.loadData {}
@@ -113,8 +118,13 @@ extension FinanceViewController: CarouselCollectionViewCoordinatorDelegate {
 }
 
 // MARK: ChartCollectionViewCoordinatorDelegate
-extension FinanceViewController: ChartCollectionViewCoordinatorDelegate {
-    func selectedCell(_ indexPath: IndexPath, collectionView: UICollectionView) {
+extension FinanceViewController {
+    @IBAction func switchTheme() {
+        sharedAppConfig.switchTheme()
+        reloadUI()
+        setupDropdown()
     }
 }
+
+
 

@@ -13,7 +13,14 @@ let sharedAppConfig = AppConfig()
 
 // manages the app global variables
 class AppConfig {
-    let activeTheme = PrimaryTheme()
+    var themes:[AppThemeProtocol] = [PrimaryTheme(), DarkTheme()]
+    var activeTheme: AppThemeProtocol = PrimaryTheme()
+    var currentActiveThemeIndex = 0
+
+    func switchTheme() {
+        self.currentActiveThemeIndex = currentActiveThemeIndex + 1
+        activeTheme = themes[currentActiveThemeIndex % themes.count]
+    }
 
     func showSpinner() {
         SwiftSpinner.setTitleFont(activeTheme.headerFont)

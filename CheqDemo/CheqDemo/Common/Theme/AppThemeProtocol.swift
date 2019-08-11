@@ -17,6 +17,7 @@ protocol AppThemeProtocol {
     var headerFont: UIFont { get }
 
     //MARK: colors
+    var barStyle: UIBarStyle { get }
     var textColor: UIColor { get }
     var linksColor: UIColor { get }
     var primaryColor: UIColor { get }
@@ -29,9 +30,9 @@ protocol AppThemeProtocol {
     var nonActiveAlpha: CGFloat { get }
 
     //MARK: gradients
-    var gradientBlueSet: [UIColor] { get }
-    var gradientOrangeSet: [UIColor] { get }
-    var gradientGreenSet: [UIColor] { get }
+    var gradientSet1: [UIColor] { get }
+    var gradientSet2: [UIColor] { get }
+    var gradientSet3: [UIColor] { get }
     func allBgColors()-> [UIColor]
 
     //MARK: animations
@@ -48,4 +49,62 @@ protocol AppThemeProtocol {
     func cardStyling(_ view: UIView, bgColors: [UIColor])
     func cardStyling(_ view: UIView, bgColor: UIColor)
     func collectionViewPadding(_ collectionView: UICollectionView, cellLength: CGFloat, collectionType: CollectionViewType)
+}
+
+// MARK: Styling logics 
+extension AppThemeProtocol {
+
+    func cardStyling(_ view: UIView, bgColor: UIColor) {
+        view.backgroundColor = bgColor
+        view.layer.masksToBounds = false
+        view.layer.cornerRadius = 20.0
+        view.layer.shadowPath =
+            UIBezierPath(roundedRect: view.layer.bounds,
+                         cornerRadius: view.layer.cornerRadius).cgPath
+        view.layer.shadowColor = textColor.cgColor
+        view.layer.shadowOpacity = 0.2
+        view.layer.shadowOffset = CGSize(width: 5, height: 5)
+        view.layer.shadowRadius = view.layer.cornerRadius / 2.0
+    }
+
+    func cardStyling(_ view: UIView, bgColors: [UIColor]) {
+        // setup gradient layer
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.masksToBounds = false
+        gradientLayer.frame = view.layer.bounds
+        gradientLayer.colors = bgColors.map({ $0.cgColor })
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.0)
+        gradientLayer.opacity = 0.8;
+        gradientLayer.cornerRadius = 20.0
+        gradientLayer.shadowPath =
+            UIBezierPath(roundedRect: gradientLayer.bounds,
+                         cornerRadius: gradientLayer.cornerRadius).cgPath
+        gradientLayer.shadowColor = UIColor.black.cgColor
+        gradientLayer.shadowOpacity = 0.2
+        gradientLayer.shadowOffset = CGSize(width: 5, height: 5)
+        gradientLayer.shadowRadius = gradientLayer.cornerRadius / 2.0
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+
+    func allBgColors()-> [UIColor] {
+        return [alternativeColor1, alternativeColor2, alternativeColor3, alternativeColor4]
+    }
+
+    func collectionViewPadding(_ collectionView: UICollectionView, cellLength: CGFloat, collectionType: CollectionViewType) {
+        switch(collectionType) {
+
+        // for carousel
+        case .carousel:
+            collectionView.contentInset = UIEdgeInsets(top: padding, left: cellLength*0.25, bottom: padding, right: cellLength*0.25)
+
+        // for grid view
+        case .grid:
+            collectionView.contentInset = UIEdgeInsets(top: padding, left: cellLength*0.25, bottom: padding, right: cellLength*0.25)
+        }
+    }
+
+    var padding: CGFloat {
+        get { return 10.0 }
+    }
 }

@@ -18,7 +18,7 @@ struct ColorUtil {
 
     static func randGradientSet()->[UIColor] {
         let theme = sharedAppConfig.activeTheme
-        let gradients = [theme.gradientBlueSet, theme.gradientGreenSet, theme.gradientOrangeSet]
+        let gradients = [theme.gradientSet1, theme.gradientSet3, theme.gradientSet2]
         let randIndex = Int.random(in: 0..<gradients.count) % gradients.count
         let selectedGradient = gradients[randIndex]
         return selectedGradient

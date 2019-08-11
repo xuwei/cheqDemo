@@ -11,7 +11,6 @@ import Charts
 
 class CarouselCollectionViewCell: UICollectionViewCell {
 
-    let theme = sharedAppConfig.activeTheme
     var barView = CBarChartView()
 
     override func awakeFromNib() {
@@ -32,7 +31,7 @@ class CarouselCollectionViewCell: UICollectionViewCell {
         if !(self.contentView.layer.sublayers?.first is CAGradientLayer) {
             CATransaction.begin()
             CATransaction.setDisableActions(true)
-            theme.cardStyling(self.contentView, bgColors: ColorUtil.randGradientSet())
+            sharedAppConfig.activeTheme.cardStyling(self.contentView, bgColors: ColorUtil.randGradientSet())
             CATransaction.commit()
         }
     }
@@ -65,6 +64,6 @@ extension CarouselCollectionViewCell: ChartCollectionViewCellProtocol {
     }
 
     func animate() {
-        self.barView.animate(yAxisDuration: theme.mediumAnimationDuration, easingOption: .easeInOutBounce)
+        self.barView.animate(yAxisDuration: sharedAppConfig.activeTheme.mediumAnimationDuration, easingOption: .easeInOutBounce)
     }
 }

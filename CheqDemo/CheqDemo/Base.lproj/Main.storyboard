@@ -128,7 +128,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B5r-D8-eWa"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oVv-Sb-eyO"/>
+                    <navigationItem key="navigationItem" id="oVv-Sb-eyO">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="EJZ-9p-7HS">
+                            <connections>
+                                <action selector="switchTheme" destination="UCm-Og-0sq" id="e5N-rJ-137"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="carouselCollectionView" destination="zsq-Fy-do7" id="GFN-xX-46B"/>
                         <outlet property="gridCollectionView" destination="hUl-G7-30h" id="aVC-DA-K6U"/>

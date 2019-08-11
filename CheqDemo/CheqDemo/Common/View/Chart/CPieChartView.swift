@@ -11,8 +11,6 @@ import Charts
 
 class CPieChartView: PieChartView {
 
-    let theme = sharedAppConfig.activeTheme
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConfig()
@@ -33,16 +31,18 @@ extension CPieChartView: CChartViewProtocol {
         self.rotationWithTwoFingers = false
         self.rotationEnabled = false
         self.rotationAngle = 0.5
-        self.entryLabelFont = theme.defaultFont
-        self.entryLabelColor = theme.textColor
+        self.entryLabelFont = sharedAppConfig.activeTheme.defaultFont
+        self.entryLabelColor = sharedAppConfig.activeTheme.textColor
         self.drawCenterTextEnabled = false
         self.drawHoleEnabled = true
+        self.holeColor = sharedAppConfig.activeTheme.backgroundColor
         self.holeRadiusPercent = 0.7
         self.legend.enabled = true
         self.legend.verticalAlignment = .top
         self.legend.horizontalAlignment = .left
-        self.legend.xOffset = theme.padding
-        self.legend.yOffset = theme.padding
+        self.legend.xOffset = sharedAppConfig.activeTheme.padding
+        self.legend.yOffset = sharedAppConfig.activeTheme.padding
+        self.legend.textColor = sharedAppConfig.activeTheme.textColor
     }
 
     func loadData(_ chartModel: ChartModel) {
@@ -66,9 +66,12 @@ extension CPieChartView: CChartViewProtocol {
         dataSet.automaticallyDisableSliceSpacing = true
         dataSet.colors = [ColorUtil.randAlternateColor(), .clear]
         dataSet.valueColors = [.clear, .clear]
-        dataSet.valueFont = theme.defaultFont
-        dataSet.entryLabelColor = theme.textColor
+        dataSet.valueFont = sharedAppConfig.activeTheme.defaultFont
+        dataSet.entryLabelColor = sharedAppConfig.activeTheme.textColor
         let data = PieChartData(dataSet: dataSet)
         self.data = data
+
+        // refresh config incase we switched to diff theme
+        setupConfig()
     }
 }

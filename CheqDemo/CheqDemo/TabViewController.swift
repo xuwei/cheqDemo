@@ -16,6 +16,8 @@ class TabViewController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = theme.backgroundColor
+        self.view.backgroundColor = sharedAppConfig.activeTheme.backgroundColor
     }
+
+
 }

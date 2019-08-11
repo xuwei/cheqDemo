@@ -35,6 +35,7 @@
 		9676526022FB0946001E43E0 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676525F22FB0946001E43E0 /* TabViewController.swift */; };
 		9676526222FB156E001E43E0 /* CarouselCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676526122FB156E001E43E0 /* CarouselCollectionViewCell.swift */; };
 		9676526422FB158B001E43E0 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9676526322FB158B001E43E0 /* GridCollectionViewCell.swift */; };
+		9695E36E230016C60037A49D /* DarkTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695E36D230016C60037A49D /* DarkTheme.swift */; };
 		96A65E7D22FD4B9300F1F7AB /* ColorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A65E7C22FD4B9300F1F7AB /* ColorUtil.swift */; };
 		96B0068A22FE69AB00173743 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0068922FE69AA00173743 /* AppConfig.swift */; };
 		96B0068C22FE6A9E00173743 /* CBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B0068B22FE6A9E00173743 /* CBarChartView.swift */; };
@@ -91,6 +92,7 @@
 		9676525F22FB0946001E43E0 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		9676526122FB156E001E43E0 /* CarouselCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCell.swift; sourceTree = "<group>"; };
 		9676526322FB158B001E43E0 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		9695E36D230016C60037A49D /* DarkTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkTheme.swift; sourceTree = "<group>"; };
 		96A65E7C22FD4B9300F1F7AB /* ColorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtil.swift; sourceTree = "<group>"; };
 		96B0068922FE69AA00173743 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		96B0068B22FE6A9E00173743 /* CBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBarChartView.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 		9676524922FB06C0001E43E0 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
+				9695E36D230016C60037A49D /* DarkTheme.swift */,
 				9676524A22FB06DB001E43E0 /* AppThemeProtocol.swift */,
 				9629A59422FC460200828FCF /* PrimaryTheme.swift */,
 			);
@@ -608,6 +611,7 @@
 				9676525422FB07C0001E43E0 /* ProfileViewModel.swift in Sources */,
 				9676523E22FB05C1001E43E0 /* ProfileViewController.swift in Sources */,
 				966A19E222FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift in Sources */,
+				9695E36E230016C60037A49D /* DarkTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

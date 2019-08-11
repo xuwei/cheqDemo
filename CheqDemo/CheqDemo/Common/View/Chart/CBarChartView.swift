@@ -11,8 +11,6 @@ import Charts
 
 class CBarChartView: BarChartView {
 
-    let theme = sharedAppConfig.activeTheme
-
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConfig()
@@ -27,18 +25,18 @@ class CBarChartView: BarChartView {
 // MARK: CChartViewProtocol
 extension CBarChartView: CChartViewProtocol {
     func setupConfig() {
-        self.extraBottomOffset = theme.padding
-        self.legend.yOffset = theme.padding
+        self.extraBottomOffset = sharedAppConfig.activeTheme.padding
+        self.legend.yOffset = sharedAppConfig.activeTheme.padding
         self.rightAxis.enabled = false
         self.xAxis.enabled = true
         self.leftAxis.enabled = false
         self.gridBackgroundColor = .clear
         self.drawBarShadowEnabled = false
-        self.xAxis.labelTextColor = theme.textColor
+        self.xAxis.labelTextColor = sharedAppConfig.activeTheme.textColor
         self.xAxis.drawAxisLineEnabled = false
         self.xAxis.drawGridLinesEnabled = false
-        self.legend.textColor = theme.textColor
-        self.legend.font = theme.defaultFont
+        self.legend.textColor = sharedAppConfig.activeTheme.textColor
+        self.legend.font = sharedAppConfig.activeTheme.defaultFont
         self.legend.verticalAlignment = .top
         self.xAxis.valueFormatter = CBarChartFormatter()
         self.xAxis.labelPosition =  .bottom
@@ -48,10 +46,6 @@ extension CBarChartView: CChartViewProtocol {
 
     func loadData(_ chartModel: ChartModel) {
         guard chartModel.type == .bar else { return }
-//        let entries: [ChartDataEntry] = chartModel.dataSet.map{ (key, value) in
-//            BarChartDataEntry(x: key, y: value)
-//        }
-
         let entries: [ChartDataEntry] = chartModel.dataSet.map { (arg: (key: String, value: Any)) -> ChartDataEntry in
             let (key, value) = arg
             let k = Double(key)!
@@ -59,11 +53,14 @@ extension CBarChartView: CChartViewProtocol {
             return BarChartDataEntry(x: k, y: v)
         }
         let dataSet = BarChartDataSet(entries: entries, label: chartModel.title)
-        dataSet.setColor(theme.textBackgroundColor.withAlphaComponent(theme.nonActiveAlpha))
-        dataSet.highlightColor = theme.textBackgroundColor
-        dataSet.valueTextColor = theme.textColor
-        dataSet.valueFont = theme.mediumFont
+        dataSet.setColor(sharedAppConfig.activeTheme.textBackgroundColor.withAlphaComponent(sharedAppConfig.activeTheme.nonActiveAlpha))
+        dataSet.highlightColor = sharedAppConfig.activeTheme.textBackgroundColor
+        dataSet.valueTextColor = sharedAppConfig.activeTheme.textColor
+        dataSet.valueFont = sharedAppConfig.activeTheme.mediumFont
         let data = BarChartData(dataSet: dataSet)
         self.data = data
+
+        // refresh config incase we switched to diff theme 
+        setupConfig()
     }
 }

@@ -12,7 +12,6 @@ import Charts
 class GridCollectionViewCell: UICollectionViewCell {
 
     var pie = CPieChartView()
-    let theme = sharedAppConfig.activeTheme
     @IBOutlet var title: UILabel! 
 
     override func awakeFromNib() {
@@ -20,8 +19,8 @@ class GridCollectionViewCell: UICollectionViewCell {
         self.backgroundColor = .clear
         self.layer.masksToBounds = false
         self.setupChart()
-        self.title.textColor = theme.textColor
-        self.title.font = theme.defaultFont
+        self.title.textColor = sharedAppConfig.activeTheme.textColor
+        self.title.font = sharedAppConfig.activeTheme.defaultFont
         self.contentView.bringSubviewToFront(self.title)
     }
 
@@ -37,7 +36,7 @@ class GridCollectionViewCell: UICollectionViewCell {
         if !(self.contentView.layer.sublayers?.first is CAGradientLayer) {
             CATransaction.begin()
             CATransaction.setDisableActions(true)
-            theme.cardStyling(self.contentView, bgColor: theme.textBackgroundColor)
+            sharedAppConfig.activeTheme.cardStyling(self.contentView, bgColor: sharedAppConfig.activeTheme.textBackgroundColor)
             CATransaction.commit()
         }
     }

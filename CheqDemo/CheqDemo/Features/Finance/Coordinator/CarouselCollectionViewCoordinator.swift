@@ -84,13 +84,4 @@ extension CarouselCollectionViewCoordinator: UIScrollViewDelegate {
     }
 }
 
-// MARK: UICollectionViewDelegateFlowLayout
-//extension CarouselCollectionViewCoordinator {
-//    func collectionView(_ collectionView: UICollectionView,
-//                        layout collectionViewLayout: UICollectionViewLayout,
-//                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CarouselCollectionViewCell.compactSize
-//    }
-//}
-
 
