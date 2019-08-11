@@ -13,18 +13,20 @@ let sharedAppConfig = AppConfig()
 
 // manages the app global variables
 class AppConfig {
+    var themeTitles = [PrimaryTheme().themeTitle, DarkTheme().themeTitle]
     var themes:[AppThemeProtocol] = [PrimaryTheme(), DarkTheme()]
     var activeTheme: AppThemeProtocol = PrimaryTheme()
     var currentActiveThemeIndex = 0
 
-    func switchTheme() {
-        self.currentActiveThemeIndex = currentActiveThemeIndex + 1
+    func switchTheme(_ index: Int) {
+        guard index >= 0, index < themes.count else { return }
+        self.currentActiveThemeIndex = index
         activeTheme = themes[currentActiveThemeIndex % themes.count]
     }
 
     func showSpinner() {
         SwiftSpinner.setTitleFont(activeTheme.headerFont)
-        SwiftSpinner.setTitleColor(activeTheme.textBackgroundColor)
+        SwiftSpinner.setTitleColor(activeTheme.alternativeColor1)
         SwiftSpinner.setAnimationDelay(activeTheme.quickAnimationDuration)
         SwiftSpinner.show("Loading", animated: true)
     }

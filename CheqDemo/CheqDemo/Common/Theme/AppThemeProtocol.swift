@@ -11,6 +11,9 @@ import UIKit
 // by adopting AppThemeProtocol protocol, we can create different ui themes for the app
 protocol AppThemeProtocol {
 
+    //MARK: theme info
+    var themeTitle: String { get }
+
     //MARK: fonts
     var defaultFont: UIFont { get }
     var mediumFont: UIFont { get }
@@ -45,6 +48,8 @@ protocol AppThemeProtocol {
     var gridCellToScreenRatio: CGFloat { get }
     var carouselCellWidthToScreenRatio: CGFloat { get }
     var carouselCellHeightToScreenRatio: CGFloat { get }
+    var popoverMenuLabelHeight: CGFloat { get }
+    var popoverMenuToScreenWidthRatio: CGFloat { get }
 
     func cardStyling(_ view: UIView, bgColors: [UIColor])
     func cardStyling(_ view: UIView, bgColor: UIColor)
@@ -53,6 +58,9 @@ protocol AppThemeProtocol {
 
 // MARK: Styling logics 
 extension AppThemeProtocol {
+
+    var popoverMenuLabelHeight: CGFloat { get { return 40.0 } }
+    var popoverMenuToScreenWidthRatio: CGFloat { get { return 0.5 } }
 
     func cardStyling(_ view: UIView, bgColor: UIColor) {
         view.backgroundColor = bgColor

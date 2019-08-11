@@ -12,7 +12,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .green 
+        self.view.backgroundColor = sharedAppConfig.activeTheme.allBgColors().randomElement()
         // Do any additional setup after loading the view.
     }
     

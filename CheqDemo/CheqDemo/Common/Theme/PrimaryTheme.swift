@@ -18,6 +18,7 @@ enum CollectionViewType {
 
 //MARK: collection styling
 struct PrimaryTheme: AppThemeProtocol {
+    var themeTitle: String { get { return "PrimaryTheme" } }
     var gridCellToScreenRatio: CGFloat { get { return 0.35 } }
     var carouselCellWidthToScreenRatio: CGFloat { get { return 0.6 } }
     var carouselCellHeightToScreenRatio: CGFloat { get { return 0.25 } }

@@ -12,7 +12,7 @@ class AnalyticsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .orange
+        self.view.backgroundColor = sharedAppConfig.activeTheme.allBgColors().randomElement()
         // Do any additional setup after loading the view.
     }
     

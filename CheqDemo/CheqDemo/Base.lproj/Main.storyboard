@@ -129,9 +129,9 @@
                         <viewLayoutGuide key="safeArea" id="B5r-D8-eWa"/>
                     </view>
                     <navigationItem key="navigationItem" id="oVv-Sb-eyO">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="EJZ-9p-7HS">
+                        <barButtonItem key="rightBarButtonItem" image="themeIcon" style="done" id="EJZ-9p-7HS">
                             <connections>
-                                <action selector="switchTheme" destination="UCm-Og-0sq" id="e5N-rJ-137"/>
+                                <action selector="switchThemeMenu:" destination="UCm-Og-0sq" id="Sfb-xk-Tod"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -202,5 +202,6 @@
         <image name="analyticsIcon" width="30" height="30"/>
         <image name="financeIcon" width="30" height="30"/>
         <image name="profileIcon" width="30" height="30"/>
+        <image name="themeIcon" width="22" height="22"/>
     </resources>
 </document>

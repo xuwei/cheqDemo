@@ -10,6 +10,7 @@ target 'CheqDemo' do
   pod 'NavigationDropdownMenu'
   pod 'Hex'
   pod 'SwiftSpinner'
+  pod 'PopOverMenu'
   
   target 'CheqDemoTests' do
     inherit! :search_paths

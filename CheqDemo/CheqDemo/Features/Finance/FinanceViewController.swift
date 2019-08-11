@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopOverMenu
 import NavigationDropdownMenu
 
 class FinanceViewController: UIViewController {
@@ -119,10 +120,35 @@ extension FinanceViewController: CarouselCollectionViewCoordinatorDelegate {
 
 // MARK: ChartCollectionViewCoordinatorDelegate
 extension FinanceViewController {
-    @IBAction func switchTheme() {
-        sharedAppConfig.switchTheme()
-        reloadUI()
-        setupDropdown()
+    @IBAction func switchThemeMenu(_ sender: UIBarButtonItem) {
+        let titles = sharedAppConfig.themeTitles
+        let popOverViewController = PopOverViewController.instantiate()
+        popOverViewController.set(titles: titles)
+        popOverViewController.popoverPresentationController?.barButtonItem = sender
+        let height = CGFloat(titles.count) * sharedAppConfig.activeTheme.popoverMenuLabelHeight + sharedAppConfig.activeTheme.padding
+        popOverViewController.preferredContentSize = CGSize(width: UIScreen.main.bounds.width*sharedAppConfig.activeTheme.popoverMenuToScreenWidthRatio, height: height)
+        popOverViewController.presentationController?.delegate = self
+        popOverViewController.completionHandler = { selectRow in
+            self.switchTheme(selectRow)
+        }
+        present(popOverViewController, animated: true, completion: nil)
+    }
+
+    func switchTheme(_ index: Int) {
+        sharedAppConfig.switchTheme(index)
+        self.reloadUI()
+        self.setupDropdown()
+    }
+}
+
+extension FinanceViewController: UIAdaptivePresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
+    }
+
+
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return UIModalPresentationStyle.none
     }
 }
 
