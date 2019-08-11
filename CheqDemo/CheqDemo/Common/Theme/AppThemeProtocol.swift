@@ -115,4 +115,26 @@ extension AppThemeProtocol {
     var padding: CGFloat {
         get { return 10.0 }
     }
+
+    var nonActiveAlpha: CGFloat { get { return 0.5 } }
+
+    var defaultFont: UIFont {
+        get { return UIFont.systemFont(ofSize: 12.0)}
+    }
+
+    var mediumFont: UIFont {
+        get { return UIFont.systemFont(ofSize: 15.0)}
+    }
+
+    var headerFont: UIFont {
+        get { return UIFont.systemFont(ofSize: 20.0)}
+    }
+
+    var longAnimationDuration: TimeInterval { return 1.0 }
+    var mediumAnimationDuration: TimeInterval { return 0.5 }
+    var quickAnimationDuration: TimeInterval { return 0.25}
+
+    var gridCellToScreenRatio: CGFloat { get { return 0.35 } }
+    var carouselCellWidthToScreenRatio: CGFloat { get { return 0.6 } }
+    var carouselCellHeightToScreenRatio: CGFloat { get { return 0.25 } }
 }

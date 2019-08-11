@@ -15,6 +15,7 @@
 		963D62EE22FB1DE0006344C9 /* CollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */; };
 		963D62F022FB2231006344C9 /* CarouselCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62EF22FB2230006344C9 /* CarouselCollectionViewCoordinator.swift */; };
 		963D62F222FB225B006344C9 /* GridCollectionViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */; };
+		9660718E23003FA700F0D5CC /* CBATheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9660718D23003FA700F0D5CC /* CBATheme.swift */; };
 		966A19E222FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */; };
 		966A19E622FEA95700A6E444 /* GridCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E522FEA95600A6E444 /* GridCoordinatorViewModel.swift */; };
 		966A19E822FEDACC00A6E444 /* DispatchUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A19E722FEDACC00A6E444 /* DispatchUtil.swift */; };
@@ -68,6 +69,7 @@
 		963D62ED22FB1DE0006344C9 /* CollectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewProtocol.swift; sourceTree = "<group>"; };
 		963D62EF22FB2230006344C9 /* CarouselCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewCoordinator.swift; sourceTree = "<group>"; };
 		963D62F122FB225B006344C9 /* GridCollectionViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCoordinator.swift; sourceTree = "<group>"; };
+		9660718D23003FA700F0D5CC /* CBATheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBATheme.swift; sourceTree = "<group>"; };
 		966A19E122FEA7E700A6E444 /* CarouselCoordinatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCoordinatorViewModel.swift; sourceTree = "<group>"; };
 		966A19E522FEA95600A6E444 /* GridCoordinatorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCoordinatorViewModel.swift; sourceTree = "<group>"; };
 		966A19E722FEDACC00A6E444 /* DispatchUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchUtil.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				9695E36D230016C60037A49D /* DarkTheme.swift */,
 				9676524A22FB06DB001E43E0 /* AppThemeProtocol.swift */,
 				9629A59422FC460200828FCF /* PrimaryTheme.swift */,
+				9660718D23003FA700F0D5CC /* CBATheme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				96B0068C22FE6A9E00173743 /* CBarChartView.swift in Sources */,
 				96B0069822FE72A700173743 /* CommonEnums.swift in Sources */,
 				9629A59522FC460200828FCF /* PrimaryTheme.swift in Sources */,
+				9660718E23003FA700F0D5CC /* CBATheme.swift in Sources */,
 				9676524022FB05D1001E43E0 /* AnalyticsViewController.swift in Sources */,
 				96A65E7D22FD4B9300F1F7AB /* ColorUtil.swift in Sources */,
 				96B0069522FE70B100173743 /* CPieViewFormatter.swift in Sources */,
