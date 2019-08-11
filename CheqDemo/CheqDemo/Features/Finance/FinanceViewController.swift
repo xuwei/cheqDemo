@@ -35,16 +35,11 @@ class FinanceViewController: UIViewController {
         self.pageControl.isUserInteractionEnabled = false
         self.setupCollectionView()
         self.setupDropdown()
+        self.loadData { self.reloadUI() }
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        sharedAppConfig.showSpinner()
-        self.viewModel.load {
-            sharedAppConfig.hideSpinner()
-            self.pageControl.numberOfPages = self.viewModel.carouselCoordViewModel.barChartModels.count
-            self.reloadUI()
-        }
     }
 
     func reloadUI() {
@@ -96,7 +91,16 @@ class FinanceViewController: UIViewController {
         menuView.cellTextLabelFont = theme.defaultFont
         self.navigationItem.titleView = menuView
         menuView.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
-            print(self.menuTitles[indexPath])
+            self.loadData {}
+        }
+    }
+
+    func loadData(_ completion: @escaping ()-> Void) {
+        sharedAppConfig.showSpinner()
+        self.viewModel.load {
+            sharedAppConfig.hideSpinner()
+            self.pageControl.numberOfPages = self.viewModel.carouselCoordViewModel.barChartModels.count
+            completion()
         }
     }
 }

@@ -40,7 +40,7 @@ extension CBarChartView: CChartViewProtocol {
         self.legend.textColor = theme.textColor
         self.legend.font = theme.defaultFont
         self.legend.verticalAlignment = .top
-//        self.xAxis.valueFormatter = CBarChartFormatter()
+        self.xAxis.valueFormatter = CBarChartFormatter()
         self.xAxis.labelPosition =  .bottom
         self.pinchZoomEnabled = false
         self.doubleTapToZoomEnabled = false
