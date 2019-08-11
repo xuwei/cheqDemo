@@ -12,8 +12,12 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.view.backgroundColor = sharedAppConfig.activeTheme.allBgColors().randomElement()
-        // Do any additional setup after loading the view.
+
     }
     
 
