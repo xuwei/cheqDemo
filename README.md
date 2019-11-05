@@ -1,2 +1,2 @@
 # cheqDemo
-demo app
+demo app on Charts UI app
