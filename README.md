@@ -1,2 +1,5 @@
 # cheqDemo
-demo app on Charts UI app
+
+- Demonstration on use of Chart library on iOS 
+- Experimentation with Event-Driven Observer pattern for app component interactions 
+- Dynamic theme dependency injection
